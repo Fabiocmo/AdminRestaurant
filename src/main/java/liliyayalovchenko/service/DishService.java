@@ -19,11 +19,6 @@ public class DishService {
     }
 
     @Transactional
-    public List<Dish> search(String pattern) {
-        return dishDAO.search(pattern);
-    }
-
-    @Transactional
     public List<Dish> getAllDishes() {
         return dishDAO.getAll();
     }

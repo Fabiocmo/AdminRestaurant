@@ -3,8 +3,6 @@ package liliyayalovchenko.service;
 import liliyayalovchenko.dao.WarehouseDAO;
 import liliyayalovchenko.domain.Ingredient;
 import liliyayalovchenko.domain.Warehouse;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,8 +12,6 @@ public class WarehouseService {
 
     @Autowired
     private WarehouseDAO warehouseDAO;
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(WarehouseService.class);
 
     @Transactional
     public List<Warehouse> getAllIngredients() {

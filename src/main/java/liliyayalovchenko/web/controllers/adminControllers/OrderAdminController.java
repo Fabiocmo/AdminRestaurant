@@ -1,7 +1,9 @@
 package liliyayalovchenko.web.controllers.adminControllers;
 
+import liliyayalovchenko.domain.Order;
 import liliyayalovchenko.service.EmployeeService;
 import liliyayalovchenko.service.OrderService;
+import liliyayalovchenko.web.exeptions.WrongDateInputFormatException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,6 +14,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.text.ParseException;
+import java.util.List;
 
 @Controller
 @RequestMapping("/admin")
@@ -69,13 +73,19 @@ public class OrderAdminController {
 
     @RequestMapping(value = "/order/filterByDate", method = RequestMethod.POST)
     public ModelAndView orderFilterByDate(HttpServletRequest request,
-                                          @RequestParam String date) {
+                                          @RequestParam String date) throws WrongDateInputFormatException {
         HttpSession session = request.getSession();
         ModelAndView modelAndView = new ModelAndView();
         if (verify(session)) {
             modelAndView.setViewName("adminOrders");
             modelAndView.addObject("waiters", employeeService.getAllWaiters());
-            modelAndView.addObject("orders", orderService.getOrderByDate(date));
+            List<Order> orderList;
+            try {
+                orderList = orderService.getOrderByDate(date);
+            } catch (ParseException e) {
+                throw new WrongDateInputFormatException(date);
+            }
+            modelAndView.addObject("orders", orderList);
             return modelAndView;
         }
         modelAndView.setViewName("adminLogin");

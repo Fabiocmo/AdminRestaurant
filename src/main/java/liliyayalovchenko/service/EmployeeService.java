@@ -20,11 +20,6 @@ public class EmployeeService {
     }
 
     @Transactional
-    public Employee getEmployeeByName(String name, String surname) {
-       return employeeDAO.getByFullName(name, surname);
-    }
-
-    @Transactional
     public List<Employee> getAllWaiters() {
         return employeeDAO.getAllWaiters();
     }
@@ -32,16 +27,6 @@ public class EmployeeService {
     @Transactional
     public Employee getEmployeeById(int id) {
         return employeeDAO.getById(id);
-    }
-
-    @Transactional
-    public List<Employee> getEmployeeByFirstName(String employeeName) {
-        return employeeDAO.getByFirstName(employeeName);
-    }
-
-    @Transactional
-    public List<Employee> getEmployeeBySecondName(String employeeSecondName) {
-        return employeeDAO.getBySecondName(employeeSecondName);
     }
 
     @Transactional
