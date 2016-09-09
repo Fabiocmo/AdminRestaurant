@@ -45,12 +45,11 @@ public class WarehouseDAOImpl implements WarehouseDAO {
         } else {
             throw new RuntimeException("Cant find ingredient on warehouse by this ingredient name");
         }
-
     }
 
     @Override
     @Transactional(propagation = Propagation.MANDATORY)
-    public List<Warehouse> findByName(String ingredientName) {
+    public List<Warehouse> getByName(String ingredientName) {
         return sessionFactory.getCurrentSession()
                 .createQuery("select w from Warehouse w where w.ingredId.name =:var")
                 .setParameter("var", ingredientName)

@@ -22,7 +22,7 @@ public class OrderService {
     @Transactional
     public List<Order> getAllOrders() {
         LOGGER.info("Try to get all orders");
-        List<Order> orders = orderDAO.findAll();
+        List<Order> orders = orderDAO.getAll();
         LOGGER.info("All orders are got");
         return orders;
     }

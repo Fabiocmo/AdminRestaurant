@@ -21,31 +21,18 @@ public class IngredientDAOImpl implements IngredientDAO {
 
     @Override
     @Transactional(propagation = Propagation.MANDATORY)
-    public Ingredient getIngredientById(int id) {
-        Session session = sessionFactory.getCurrentSession();
-        Ingredient ingredient = (Ingredient) session.load(Ingredient.class, id);
-        if (ingredient != null) {
-            return ingredient;
-        } else {
-            throw new RuntimeException("Cant get ingredient by this id.");
-        }
-    }
-
-    @Override
-    @Transactional(propagation = Propagation.MANDATORY)
     public List<Ingredient> getAllIngredients() {
-        Session session = sessionFactory.getCurrentSession();
-        Criteria criteria = session.createCriteria(Ingredient.class);
-        return criteria.list();
+       return sessionFactory.getCurrentSession().createQuery("select i from Ingredient i").list();
     }
 
     @Override
     @Transactional(propagation = Propagation.MANDATORY)
     public Ingredient getIngredientByName(String name) {
         Session session = sessionFactory.getCurrentSession();
-        Criteria criteria = session.createCriteria(Ingredient.class);
-        criteria.add(Restrictions.eq("name", name));
-        Ingredient ingredient = (Ingredient) criteria.list().get(0);
+        Ingredient ingredient = (Ingredient) session
+                .createQuery("select i from Ingredient i where i.name = :var")
+                .setParameter("var", name)
+                .list().get(0);
         if (ingredient == null) {
             throw new RuntimeException("Cant get ingredient by this name. Wrong name!");
         } else {
@@ -57,7 +44,10 @@ public class IngredientDAOImpl implements IngredientDAO {
     @Transactional(propagation = Propagation.MANDATORY)
     public boolean exist(String ingredientName) {
         Session session = sessionFactory.getCurrentSession();
-        Set<Ingredient> allIngredient = new HashSet<>(session.createCriteria(Ingredient.class).list());
+        Set<Ingredient> allIngredient = (Set<Ingredient>) session
+                .createQuery("select i from Ingredient i where i.name = :var")
+                .setParameter("var", ingredientName)
+                .list();
         return allIngredient.contains(new Ingredient(ingredientName));
     }
 

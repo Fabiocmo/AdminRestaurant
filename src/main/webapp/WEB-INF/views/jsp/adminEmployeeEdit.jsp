@@ -1,4 +1,4 @@
-<%@ page import="com.gmail.liliyayalovchenko.domain.Position" %>
+<%@ page import="liliyayalovchenko.domain.Position" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -38,7 +38,6 @@
             <li><a href="/admin/employee" style="color: #ffffff">Employees</a></li>
             <li><a href="/admin/dish" style="color: #ffffff">Dishes</a></li>
             <li><a href="/admin/warehouse" style="color: #ffffff">Warehouse</a></li>
-            <li><a href="/" style="color: #ffffff">Go to restaurant site</a></li>
           </ul>
         </div>
       </div>

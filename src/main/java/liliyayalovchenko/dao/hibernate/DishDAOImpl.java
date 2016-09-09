@@ -50,10 +50,10 @@ public class DishDAOImpl implements DishDAO {
 
     @Override
     @Transactional(propagation = Propagation.MANDATORY)
-    public List<Dish> findAll() {
+    public List<Dish> getAll() {
         Session currentSession = sessionFactory.getCurrentSession();
         Query query = currentSession.createQuery("select d from Dish d");
-        return query.getResultList();
+        return query.list();
     }
 
     @Override
@@ -72,12 +72,6 @@ public class DishDAOImpl implements DishDAO {
 
     @Override
     @Transactional(propagation = Propagation.MANDATORY)
-    public void removeDish(Dish dish) {
-        sessionFactory.getCurrentSession().delete(dish);
-    }
-
-    @Override
-    @Transactional(propagation = Propagation.MANDATORY)
     public void remove(int id) {
         Session session = sessionFactory.getCurrentSession();
         Dish dish = session.load(Dish.class, id);
@@ -88,7 +82,7 @@ public class DishDAOImpl implements DishDAO {
     @Transactional(propagation = Propagation.MANDATORY)
     public Dish getDishById(int dishId) {
         Session session = sessionFactory.getCurrentSession();
-        Dish dish = (Dish) session.load(Dish.class, dishId);
+        Dish dish = session.load(Dish.class, dishId);
         if (dish != null) {
             return dish;
         } else {

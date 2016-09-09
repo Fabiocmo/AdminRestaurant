@@ -20,11 +20,9 @@ public interface EmployeeDAO {
 
     List<Employee> getBySecondName(String employeeSecondName);
 
-    Employee findByName(String firstName, String secondName);
+    Employee getByFullName(String firstName, String secondName);
 
-    List<Employee> findAll();
-
-    void removeEmployee(String firstName, String secondName);
+    List<Employee> getAll();
 
     void removeEmployee(int id);
 

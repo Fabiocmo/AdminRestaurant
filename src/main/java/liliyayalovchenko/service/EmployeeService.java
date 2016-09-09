@@ -16,12 +16,12 @@ public class EmployeeService {
 
     @Transactional
     public List<Employee> getAllEmployees() {
-        return employeeDAO.findAll();
+        return employeeDAO.getAll();
     }
 
     @Transactional
     public Employee getEmployeeByName(String name, String surname) {
-       return employeeDAO.findByName(name, surname);
+       return employeeDAO.getByFullName(name, surname);
     }
 
     @Transactional

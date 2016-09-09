@@ -25,7 +25,7 @@ public class DishService {
 
     @Transactional
     public List<Dish> getAllDishes() {
-        return dishDAO.findAll();
+        return dishDAO.getAll();
     }
 
     @Transactional

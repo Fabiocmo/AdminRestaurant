@@ -1,6 +1,5 @@
 package liliyayalovchenko.dao;
 
-import liliyayalovchenko.domain.Dish;
 import liliyayalovchenko.domain.Order;
 import liliyayalovchenko.domain.OrderStatus;
 
@@ -11,19 +10,11 @@ public interface OrderDAO {
 
     void save(Order order);
 
-    List<Order> findAll();
-
-    void addDishToOpenOrder(Dish dish, int orderNumber);
-
-    void deleteOrder(int orderNumber);
-
-    void changeOrderStatus(int orderNumber);
+    List<Order> getAll();
 
     List<Order> getOpenOrClosedOrder(OrderStatus orderStatus);
 
     Order getOrderById(int i);
-
-    int getLastOrder();
 
     List<Order> getOrderByEmployee(String name);
 

@@ -12,7 +12,7 @@ public interface WarehouseDAO {
 
     void removeIngredient(String ingredientName);
 
-    List<Warehouse> findByName(String ingredientName);
+    List<Warehouse> getByName(String ingredientName);
 
     List<Warehouse> getAllIngredients();
 

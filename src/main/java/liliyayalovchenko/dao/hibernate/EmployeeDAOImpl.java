@@ -56,22 +56,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
     @Override
     @Transactional(propagation = Propagation.MANDATORY)
-    public List<Employee> findAll() {
+    public List<Employee> getAll() {
         return sessionFactory.getCurrentSession().createQuery("select e from Employee e").list();
-    }
-
-    @Override
-    @Transactional(propagation = Propagation.MANDATORY)
-    public void removeEmployee(String firstName, String secondName) {
-        Session session = sessionFactory.getCurrentSession();
-        Employee employee = (Employee) session.createQuery("select e from Employee e where e.firstName = :var1 and e.secondName= :var2")
-                .setParameter("var1", firstName)
-                .uniqueResult();
-        if (employee != null) {
-            session.delete(employee);
-        } else {
-            throw new RuntimeException("Cant find employee by this name. Error!");
-        }
     }
 
     @Override
@@ -83,7 +69,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
     @Override
     @Transactional(propagation = Propagation.MANDATORY)
-    public Employee findByName(String firstName, String secondName) {
+    public Employee getByFullName(String firstName, String secondName) {
         Session session = sessionFactory.getCurrentSession();
         Employee employee = (Employee) session.createQuery("select e from Employee e where e.firstName = :var1 and e.secondName= :var2")
                 .setParameter("var1", firstName)

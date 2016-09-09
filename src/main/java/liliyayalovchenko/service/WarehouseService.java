@@ -44,6 +44,6 @@ public class WarehouseService {
 
     @Transactional
     public List<Warehouse> getIngredientByName(String name) {
-        return warehouseDAO.findByName(name);
+        return warehouseDAO.getByName(name);
     }
 }

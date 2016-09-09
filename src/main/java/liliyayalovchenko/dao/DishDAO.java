@@ -9,9 +9,7 @@ public interface DishDAO {
 
     void save(Dish dish);
 
-    void removeDish(Dish dish);
-
-    List<Dish> findAll();
+    List<Dish> getAll();
 
     Dish getDishByName(String dishName);
 

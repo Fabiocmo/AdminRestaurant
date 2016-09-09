@@ -29,7 +29,7 @@ public class OrderDAOImpl implements OrderDAO {
 
     @Override
     @Transactional(propagation = Propagation.MANDATORY)
-    public List<Order> findAll() {
+    public List<Order> getAll() {
         return sessionFactory.getCurrentSession()
                 .createQuery("select o from Order o")
                 .list();
@@ -75,51 +75,6 @@ public class OrderDAOImpl implements OrderDAO {
 
     @Override
     @Transactional(propagation = Propagation.MANDATORY)
-    public void addDishToOpenOrder(Dish dish, int orderNumber) {
-        Session session = sessionFactory.getCurrentSession();
-        Order order = (Order) session.createQuery("select o from Order o where o.orderNumber =:orderNumber")
-                .setParameter("orderNumber", orderNumber)
-                .list().get(0);
-        if (order == null) {
-            throw new RuntimeException("Cant get order by this order number! Wrong order number");
-        } else {
-            order.addDishToOrder(dish);
-            session.update(order);
-        }
-    }
-
-    @Override
-    @Transactional(propagation = Propagation.MANDATORY)
-    public void deleteOrder(int orderNumber) {
-        Session session = sessionFactory.getCurrentSession();
-        Order order = (Order) session.createQuery("select o from Order o where o.orderNumber =:orderNumber")
-                .setParameter("orderNumber", orderNumber)
-                .list().get(0);
-        if (order == null) {
-            throw new RuntimeException("Cant get order by this order number! Wrong order number");
-        } else {
-            session.delete(order);
-        }
-    }
-
-    @Override
-    @Transactional(propagation = Propagation.MANDATORY)
-    public void changeOrderStatus(int orderNumber) {
-        Session session = sessionFactory.getCurrentSession();
-        Order order = (Order) session.createQuery("select o from Order o where o.orderNumber =:orderNumber")
-                .setParameter("orderNumber", orderNumber)
-                .list().get(0);
-        if (order != null) {
-            order.setStatus(OrderStatus.closed);
-            session.update(order);
-
-        } else {
-            throw new RuntimeException("Cant get order by this order number! Wrong order number");
-        }
-    }
-
-    @Override
-    @Transactional(propagation = Propagation.MANDATORY)
     public List<Order> getOpenOrClosedOrder(OrderStatus orderStatus) {
         return sessionFactory.getCurrentSession()
                 .createQuery("select o from Order o where o.orderStatus =:orderStatus")
@@ -136,13 +91,5 @@ public class OrderDAOImpl implements OrderDAO {
         } else {
             throw new RuntimeException("Cant get order by this id! Error!");
         }
-    }
-
-    @Override
-    @Transactional(propagation = Propagation.MANDATORY)
-    public int getLastOrder() {
-        return (int) sessionFactory.getCurrentSession()
-                .createQuery("select max(o.orderNumber) from Order o")
-                .uniqueResult();
     }
 }

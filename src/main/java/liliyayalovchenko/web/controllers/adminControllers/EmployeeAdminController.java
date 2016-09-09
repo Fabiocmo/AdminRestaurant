@@ -4,6 +4,8 @@ import liliyayalovchenko.domain.Cook;
 import liliyayalovchenko.domain.Employee;
 import liliyayalovchenko.domain.Position;
 import liliyayalovchenko.service.EmployeeService;
+import liliyayalovchenko.web.exeptions.EmployeeNotFoundException;
+import org.hibernate.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -27,12 +29,17 @@ public class EmployeeAdminController {
 
     @RequestMapping(value = "/employee/{id}", method = RequestMethod.GET)
     public ModelAndView employee(@PathVariable int id,
-                             HttpServletRequest request) {
+                             HttpServletRequest request) throws EmployeeNotFoundException {
         HttpSession session = request.getSession();
         ModelAndView modelAndView = new ModelAndView();
         if (verify(session)) {
             modelAndView.setViewName("adminEmployee");
-            Employee employeeById = employeeService.getEmployeeById(id);
+            Employee employeeById;
+            try {
+                employeeById = employeeService.getEmployeeById(id);
+            } catch (ObjectNotFoundException ex) {
+                throw new EmployeeNotFoundException(id);
+            }
             modelAndView.addObject("employee", employeeById);
             modelAndView.addObject("date", new SimpleDateFormat("dd-MM-yyyy").format(employeeById.getEmplDate()));
             return modelAndView;
