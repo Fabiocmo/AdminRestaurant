@@ -20,4 +20,8 @@ public interface WarehouseDAO {
 
     List<Warehouse> getAllOrderByAmount();
 
+    Warehouse getIngredientById(int id);
+
+    void edit(int id, int amount);
+
 }

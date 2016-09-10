@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -49,13 +48,12 @@
     </div>
 </div>
 <!--Nav bar finished-->
-
 <div class="container marketing" style="background-color: #ffffff">
 
     <div class="row featurette">
         <div class="col-md-12">
             <h1 class="text-center" style="margin-top: 0; font-family: 'Minion Pro'; font-size: 80px; color: #e33539 ;">
-                Warehouse
+                ${ingredient.ingredId.name}
             </h1>
 
             <p class="text-center"><img src="/resources/images/warehouse.png" width="64"></p>
@@ -66,64 +64,24 @@
     <div class="row">
         <div class="col-md-6">
             <div class="row">
-                <div class="col-md-4">
-                    <p class="text-center"><a href="/admin/warehouse/filter/name"><img
-                            src="/resources/images/filter.png" width="24"> Sort name</a></p>
-                </div>
-                <div class="col-md-4">
-                    <form action="/admin/warehouse/find" method="post">
-                        <input type="text" class="text-center" name="name" pattern="[A-Za-z]+"
-                               placeholder="enter ingredient name">
-                    </form>
-                </div>
-                <div class="col-md-4">
-                    <p class="text-center"><a href="/admin/warehouse/filter/amount"><img
-                            src="/resources/images/filter.png" width="24"> Sort by amount</a></p>
-                </div>
-            </div>
-            <form role="form" action="/admin/warehouse/remove" method="post">
-                <table class="table" id="table1">
-                    <tbody>
-                    <tr>
-                        <td>Name</td>
-                        <td>Amount</td>
-                        <td>Delete</td>
-                    </tr>
-                    <c:forEach items="${warehouseList}" var="ingredient">
-                        <tr>
-                            <td class="success"><a
-                                    href="/admin/warehouse/${ingredient.id}">${ingredient.ingredId.name}</a></td>
-                            <td class="success">${ingredient.amount}</td>
-                            <td class="success"><input type="radio" name="ingredName"
-                                                       value="${ingredient.ingredId.name}"></td>
-                        </tr>
-                    </c:forEach>
-                    </tbody>
-                </table>
-                <p class="text-center">
-                    <button type="submit" class="btn btn-success">Delete ingredient</button>
-                </p>
-            </form>
-        </div>
-        <div class="col-md-6">
-            <div class="row">
                 <div class="col-md-8" style="float: none; margin-left: auto; margin-right: auto;">
-                    <h3 class="text-center" style="margin-top: 0; font-family: 'Minion Pro'; color: #e33539 ;">Add
-                        ingredient to warehouse</h3>
+                    <h3 class="text-center" style="margin-top: 0; font-family: 'Minion Pro'; color: #e33539 ;">Edit</h3>
                 </div>
             </div>
-            <form role="form" action="/admin/warehouse/add" method="post">
+            <form role="form" action="/admin/warehouse/edit/${ingredient.id}" method="post">
                 <div class="form-group">
                     <label for="ingredientName">Ingredient name</label>
-                    <input type="text" id="ingredientName" class="form-control" name="name" required>
+                    <input type="text" id="ingredientName" class="form-control" name="name"
+                           value="${ingredient.ingredId.name}" readonly required>
                 </div>
 
                 <div class="form-group">
                     <label for="amount">Amount</label>
-                    <input type="number" id="amount" class="form-control" name="amount" required>
+                    <input type="number" id="amount" class="form-control" value="${ingredient.amount}" name="amount"
+                           pattern="[0-9]{0,3}" required>
                 </div>
 
-                <button type="submit" class="btn btn-success">Add ingredient to warehouse</button>
+                <button type="submit" class="btn btn-success">Edit</button>
             </form>
         </div>
     </div>

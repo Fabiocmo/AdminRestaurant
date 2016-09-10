@@ -15,7 +15,7 @@ public class WarehouseService {
 
     @Transactional
     public List<Warehouse> getAllIngredients() {
-        return  warehouseDAO.getAllIngredients();
+        return warehouseDAO.getAllIngredients();
     }
 
     @Transactional
@@ -41,5 +41,15 @@ public class WarehouseService {
     @Transactional
     public List<Warehouse> getIngredientByName(String name) {
         return warehouseDAO.getByName(name);
+    }
+
+    @Transactional
+    public void edit(int id, int amount) {
+        warehouseDAO.edit(id, amount);
+    }
+
+    @Transactional
+    public Warehouse getById(int id) {
+        return warehouseDAO.getIngredientById(id);
     }
 }

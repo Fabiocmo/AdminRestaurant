@@ -79,4 +79,19 @@ public class WarehouseDAOImpl implements WarehouseDAO {
         Query query = session.createQuery("select w from Warehouse w order by w.amount desc");
         return query.list();
     }
+
+    @Override
+    @Transactional(propagation = Propagation.MANDATORY)
+    public void edit(int id, int amount) {
+        Session session = sessionFactory.getCurrentSession();
+        Warehouse warehouse = session.load(Warehouse.class, id);
+        warehouse.setAmount(amount);
+        session.update(warehouse);
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.MANDATORY)
+    public Warehouse getIngredientById(int id) {
+        return sessionFactory.getCurrentSession().load(Warehouse.class, id);
+    }
 }

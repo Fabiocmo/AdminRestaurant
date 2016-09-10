@@ -38,7 +38,7 @@
                     </button>
                     <img src="/resources/images/apple(2).png" style="padding: 10px 0;">
                     <a class="navbar-brand" style="color: #ffffff;" href="#">
-                    Fresh Point Administrator
+                        Fresh Point Administrator
                     </a>
                 </div>
                 <div class="navbar-collapse collapse">
@@ -85,34 +85,36 @@
     </div>
     <hr class="featurette-divider" style="margin: 15px 0;">
     <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-        <h2 class="text-center">Add new menu</h2>
-        <form role="form" action="/admin/menu/add" method="post">
-            <div class="form-group">
-                <label for="menuName">Menu name</label>
-                <input type="text" id="menuName" class="form-control" name="name" placeholder="Enter menu name" maxlength="60" pattern="[A-Za-z]+" required>
-            </div>
-            <label for="table2">Choose from existing dishes to add to this menu</label>
-            <table class="table" id="table2">
-                <thead></thead>
-                <tbody>
-                <tr>
-                    <td>Image</td>
-                    <td>Name</td>
-                    <td>Add</td>
-                </tr>
-                <c:forEach items="${dishList}" var="dish">
+        <div class="col-md-6 col-md-offset-3">
+            <h2 class="text-center">Add new menu</h2>
+
+            <form role="form" action="/admin/menu/add" method="post">
+                <div class="form-group">
+                    <label for="menuName">Menu name</label>
+                    <input type="text" id="menuName" class="form-control" name="name" placeholder="Enter menu name"
+                           maxlength="60" pattern="[A-Za-z]+" required>
+                </div>
+                <label for="table2">Choose from existing dishes to add to this menu</label>
+                <table class="table" id="table2">
+                    <thead></thead>
+                    <tbody>
                     <tr>
-                        <td class="success"><img src="${dish.photoLink}"></td>
-                        <td class="success">${dish.name}</td>
-                        <td class="success"><input type="checkbox" name="dishName" value="${dish.name}"></td>
+                        <td>Image</td>
+                        <td>Name</td>
+                        <td>Add</td>
                     </tr>
-                </c:forEach>
-                </tbody>
-            </table>
-            <button type="submit" class="btn btn-success">Add new menu</button>
-        </form>
-    </div>
+                    <c:forEach items="${dishList}" var="dish">
+                        <tr>
+                            <td class="success"><img src="${dish.photoLink}"></td>
+                            <td class="success">${dish.name}</td>
+                            <td class="success"><input type="checkbox" name="dishName" value="${dish.name}"></td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+                <button type="submit" class="btn btn-success">Add new menu</button>
+            </form>
+        </div>
     </div>
 </div>
 <!-- /.container -->

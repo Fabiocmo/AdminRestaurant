@@ -34,7 +34,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler({OrderNotFoundException.class, MenuNotFoundException.class,
-            DishNotFoundException.class, EmployeeNotFoundException.class})
+            DishNotFoundException.class, EmployeeNotFoundException.class, IngredientNotFoundException.class})
     public ModelAndView handleOrderNotFoundException(HttpServletRequest request, Exception ex) {
         LOGGER.error("Requested URL=" + request.getRequestURL());
         LOGGER.error("Exception Raised=" + ex);
@@ -79,7 +79,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler({NoHandlerFoundException.class, MethodArgumentTypeMismatchException.class})
-    public ModelAndView handleAnyException(HttpServletRequest request, Exception ex) {
+    public ModelAndView handleWrongHandleException(HttpServletRequest request, Exception ex) {
         LOGGER.error("Requested URL=" + request.getRequestURL());
         LOGGER.error("Exception Raised=" + ex);
 
@@ -88,6 +88,19 @@ public class GlobalExceptionHandler {
         modelAndView.addObject("url", request.getRequestURL());
 
         modelAndView.setViewName("404");
+        return modelAndView;
+    }
+
+    @ExceptionHandler({RuntimeException.class})
+    public ModelAndView handleRuntimeException(HttpServletRequest request, Exception ex) {
+        LOGGER.error("Requested URL=" + request.getRequestURL());
+        LOGGER.error("Exception Raised=" + ex);
+
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("exception", ex);
+        modelAndView.addObject("url", request.getRequestURL());
+
+        modelAndView.setViewName("error");
         return modelAndView;
     }
 

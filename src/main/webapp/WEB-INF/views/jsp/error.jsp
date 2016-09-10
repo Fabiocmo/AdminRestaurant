@@ -2,8 +2,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Error Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Error Page</title>
 </head>
 <body>
 <h2>Application Error, please contact support.</h2>
@@ -16,7 +16,7 @@ Exception= ${exception.message}<br><br>
 
 <strong>Exception Stack Trace</strong><br>
 <c:forEach items="${exception.stackTrace}" var="ste">
-  ${ste}
+    ${ste}
 </c:forEach>
 
 </body>

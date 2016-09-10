@@ -1,12 +1,11 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Menu page</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Restaurant of health fresh food. Affordable to everyone.">
     <meta name="author" content="Liliya Yalovchenko">
     <link rel="shortcut icon" href="/resources/apple.ico">
     <!-- Bootstrap core CSS -->
@@ -50,70 +49,50 @@
     </div>
 </div>
 <!--Nav bar finished-->
-
 <div class="container marketing" style="background-color: #ffffff">
-    <form role="form" action="/admin/menu/save/${menu.id}" method="post">
-        <div class="form-group">
-            <label for="menuId">Menu id</label>
-            <input type="text" id="menuId" class="form-control" name="id" value="${menu.id}" readonly>
+
+    <div class="row featurette">
+        <div class="col-md-12">
+            <h1 class="text-center" style="margin-top: 0; font-family: 'Minion Pro'; font-size: 80px; color: #e33539 ;">
+                Order number #${order.orderNumber}
+            </h1>
+
+            <p class="text-center"><img src="/resources/images/orders.png" width="64"></p>
         </div>
+    </div>
+    <hr class="featurette-divider" style="margin: 15px 0;">
 
-        <div class="form-group">
-            <label for="menuName">Menu name</label>
-            <input type="text" id="menuName" class="form-control" name="name" value="${menu.name}">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <table class="table" id="table1">
+                <tbody>
+                <tr>
+                    <td>Waiter/ss</td>
+                    <td>Table</td>
+                    <td>Date</td>
+                    <td>Order status</td>
+                    <td>Dish list</td>
+                </tr>
+                <tr>
+                    <td class="success"><a
+                            href="/admin/employee/${order.employeeId.id}">${order.employeeId.firstName} ${order.employeeId.secondName}</a>
+                    </td>
+                    <td class="success">${order.tableNumber}</td>
+                    <td class="success">${order.orderDate}</td>
+                    <td class="success">${order.status}</td>
+                    <td class="success">
+                        <c:forEach items="${order.dishList}" var="dish">
+                            <ol>
+                                <li><a href="/admin/dish/${dish.id}">${dish.name}</a></li>
+                            </ol>
+                        </c:forEach>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
-
-        <button type="submit" class="btn btn-success">Save changes</button>
-
-    </form>
-
-    <form role="form" action="/admin/removeDishFromMenu/${menu.id}" method="post">
-
-        <label for="table1">Dish list for this menu</label>
-        <table class="table" id="table1">
-
-            <tbody>
-            <tr>
-                <td>Image</td>
-                <td>Name</td>
-                <td>Delete</td>
-            </tr>
-            <c:forEach items="${menu.dishList}" var="dish">
-                <tr>
-                    <td class="success"><img src="${dish.photoLink}"></td>
-                    <td class="success">${dish.name}</td>
-                    <td class="success"><input type="radio" name="dishName" value="${dish.name}"></td>
-                </tr>
-            </c:forEach>
-            </tbody>
-        </table>
-        <button type="submit" class="btn btn-success">Delete dish</button>
-
-    </form>
-
-    <hr style="width: 95%;">
-    <form role="form" action="/admin/addDishToMenu/${menu.id}" method="post">
-        <label for="table2">Choose from existing dishes to add to this menu</label>
-        <table class="table" id="table2">
-            <thead></thead>
-            <tbody>
-            <tr>
-                <td>Image</td>
-                <td>Name</td>
-                <td>Add</td>
-            </tr>
-            <c:forEach items="${allDishes}" var="dish">
-                <tr>
-                    <td class="success"><img src="${dish.photoLink}"></td>
-                    <td class="success">${dish.name}</td>
-                    <td class="success"><input type="radio" name="dishName" value="${dish.name}"></td>
-                </tr>
-            </c:forEach>
-            </tbody>
-        </table>
-
-        <button type="submit" class="btn btn-success">Add dish</button>
-    </form>
+    </div>
 </div>
+<!-- /.container -->
 </body>
 </html>

@@ -1,11 +1,15 @@
 package liliyayalovchenko.domain;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+import org.hibernate.annotations.Proxy;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "WAREHOUSE")
+@Proxy(lazy = false)
 //@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Warehouse {
 
@@ -15,7 +19,8 @@ public class Warehouse {
     @Column(name = "id")
     private int id;
 
-    @OneToOne(fetch = FetchType.EAGER)
+    @OneToOne()
+    @LazyCollection(LazyCollectionOption.FALSE)
     @JoinColumn(name = "ingred_id")
     private Ingredient ingredId;
 
