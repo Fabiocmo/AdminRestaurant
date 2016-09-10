@@ -98,7 +98,7 @@ public class WarehouseAdminController {
 
     @RequestMapping(value = "/warehouse/remove", method = RequestMethod.POST)
     public ModelAndView warehouseRemove(HttpServletRequest request,
-                                       ModelMap model) {
+                                        ModelMap model) {
         HttpSession session = request.getSession();
         if (verify(session)) {
             String ingredientToRemove = request.getParameter("ingredName");

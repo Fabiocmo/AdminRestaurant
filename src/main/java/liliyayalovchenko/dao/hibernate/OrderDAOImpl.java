@@ -75,15 +75,6 @@ public class OrderDAOImpl implements OrderDAO {
 
     @Override
     @Transactional(propagation = Propagation.MANDATORY)
-    public List<Order> getOpenOrClosedOrder(OrderStatus orderStatus) {
-        return sessionFactory.getCurrentSession()
-                .createQuery("select o from Order o where o.orderStatus =:orderStatus")
-                .setParameter("orderStatus", orderStatus)
-                .list();
-    }
-
-    @Override
-    @Transactional(propagation = Propagation.MANDATORY)
     public Order getOrderById(int i) {
         Order order = sessionFactory.getCurrentSession().load(Order.class, i);
         if (order != null) {

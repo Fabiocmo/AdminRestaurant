@@ -51,7 +51,7 @@ public class Dish {
     @JsonView(Views.Internal.class)
     private List<Ingredient> ingredients;
 
-    @ManyToOne(fetch= FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "menu_id", nullable = true)
     private Menu menu;
 
@@ -77,7 +77,8 @@ public class Dish {
         this.name = name;
     }
 
-    public Dish() {}
+    public Dish() {
+    }
 
     public void setId(int id) {
         this.id = id;
@@ -144,7 +145,6 @@ public class Dish {
         this.photoLink = photoLink;
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -176,7 +176,7 @@ public class Dish {
 
     @Override
     public String toString() {
-       return "Dish{" +
+        return "Dish{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", dishCategory=" + dishCategory +
@@ -196,6 +196,4 @@ public class Dish {
         inrgredientsPrint.append(" ]");
         return inrgredientsPrint.toString();
     }
-
-
 }

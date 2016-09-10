@@ -123,9 +123,9 @@ public class MenuAdminController {
                                        @PathVariable int id,
                                        HttpServletRequest request) throws DishNotFoundException, MenuNotFoundException {
         HttpSession session = request.getSession();
-        if(verify(session)) {
+        if (verify(session)) {
             List<Dish> dishList = ((List<Dish>) session.getAttribute("dishList"));
-            String dishToRemove= request.getParameterValues("dishName")[0];
+            String dishToRemove = request.getParameterValues("dishName")[0];
             Dish dishByName;
             try {
                 dishByName = dishService.getDishByName(dishToRemove);
@@ -135,7 +135,7 @@ public class MenuAdminController {
 
             try {
                 menuService.removeDishFromMenu(id, dishByName);
-            }catch (ObjectNotFoundException ex) {
+            } catch (ObjectNotFoundException ex) {
                 throw new MenuNotFoundException(id);
             }
             menuService.updateDish(dishByName, null);
@@ -146,8 +146,6 @@ public class MenuAdminController {
         }
         return new ModelAndView("adminLogin", model);
     }
-
-
 
     @RequestMapping(value = "/menu/remove/{id}")
     public ModelAndView menuRemove(@PathVariable int id,
@@ -190,7 +188,7 @@ public class MenuAdminController {
 
             if (dishList != null) {
                 for (Dish dish : dishList) {
-                menuService.updateDish(dish, menu);
+                    menuService.updateDish(dish, menu);
                 }
             }
 
@@ -198,7 +196,6 @@ public class MenuAdminController {
         }
         return new ModelAndView("adminLogin", model);
     }
-
 
     @RequestMapping(value = "/menu", method = RequestMethod.GET)
     public ModelAndView menus(HttpServletRequest request) {

@@ -16,19 +16,8 @@ public interface EmployeeDAO {
 
     List<Employee> getAllWaiters();
 
-    List<Employee> getByFirstName(String employeeName);
-
-    List<Employee> getBySecondName(String employeeSecondName);
-
-    Employee getByFullName(String firstName, String secondName);
-
     List<Employee> getAll();
 
     void removeEmployee(int id);
-
-
-
-
-
 
 }

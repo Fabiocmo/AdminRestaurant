@@ -15,19 +15,19 @@ import javax.servlet.http.HttpSession;
 public class MainAdminController {
 
     @RequestMapping(value = "/")
-    public ModelAndView adminAccess () {
+    public ModelAndView adminAccess() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("adminLogin");
         return modelAndView;
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
-    public ModelAndView adminAccess (@RequestParam(value = "login") String login,
-                                     @RequestParam(value = "password") String password,
-                                     HttpServletRequest request,
-                                     ModelMap model) {
+    public ModelAndView adminAccess(@RequestParam(value = "login") String login,
+                                    @RequestParam(value = "password") String password,
+                                    HttpServletRequest request,
+                                    ModelMap model) {
         HttpSession session = request.getSession();
-        if((login.equals("adminLogin")&&(password.equals("111000")))) {
+        if ((login.equals("adminLogin") && (password.equals("111000")))) {
             session.setAttribute("role", "admin");
             return new ModelAndView("redirect:/admin/index", model);
         } else {
@@ -37,7 +37,7 @@ public class MainAdminController {
     }
 
     @RequestMapping(value = "/index")
-    public ModelAndView adminIndex (HttpServletRequest request) {
+    public ModelAndView adminIndex(HttpServletRequest request) {
         HttpSession session = request.getSession();
         ModelAndView modelAndView = new ModelAndView();
         if (verify(session)) {

@@ -1,7 +1,6 @@
 package liliyayalovchenko.dao;
 
 import liliyayalovchenko.domain.Order;
-import liliyayalovchenko.domain.OrderStatus;
 
 import java.text.ParseException;
 import java.util.List;
@@ -12,8 +11,6 @@ public interface OrderDAO {
 
     List<Order> getAll();
 
-    List<Order> getOpenOrClosedOrder(OrderStatus orderStatus);
-
     Order getOrderById(int i);
 
     List<Order> getOrderByEmployee(String name);
@@ -21,4 +18,5 @@ public interface OrderDAO {
     List<Order> getOrderByDate(String date) throws ParseException;
 
     List<Order> getOrderByTable(int tableNumber);
+
 }

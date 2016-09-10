@@ -42,7 +42,8 @@ public class ReadyMeal {
         this.mealDate = mealDate;
     }
 
-    public ReadyMeal() {}
+    public ReadyMeal() {
+    }
 
     public void setId(int id) {
         this.id = id;

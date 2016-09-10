@@ -1,6 +1,7 @@
 package liliyayalovchenko.domain;
 
 import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 @Entity
@@ -32,15 +33,7 @@ public class Warehouse {
         this.ingredId = ingredId;
     }
 
-
-    public Warehouse() {}
-
-    public void changeAmount(int amount1, boolean increase) {
-        if (increase) {
-           amount = amount + amount1;
-        } else {
-            amount = amount - amount1;
-        }
+    public Warehouse() {
     }
 
     public int getId() {
@@ -94,5 +87,13 @@ public class Warehouse {
         int result = ingredId != null ? ingredId.hashCode() : 0;
         result = 31 * result + amount;
         return result;
+    }
+
+    public void changeAmount(int amount1, boolean increase) {
+        if (increase) {
+            amount = amount + amount1;
+        } else {
+            amount = amount - amount1;
+        }
     }
 }

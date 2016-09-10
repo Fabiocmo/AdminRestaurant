@@ -43,6 +43,7 @@ public class DishAdminController {
             try {
                 dish = dishService.getDishById(id);
             } catch (ObjectNotFoundException ex) {
+                System.out.println("before exception throws");
                 throw new DishNotFoundException(id);
             }
             modelAndView.addObject("dish", dish);
@@ -110,13 +111,13 @@ public class DishAdminController {
     }
 
     @RequestMapping(value = "/dish/addNew", method = RequestMethod.POST)
-    public ModelAndView dishAdd( ModelMap model,
-                                 @RequestParam String name,
-                                 @RequestParam String dishCategory,
-                                 @RequestParam double price,
-                                 @RequestParam int weight,
-                                 @RequestParam String photoLink,
-                                 HttpServletRequest request) throws DishWithOutIngredientsException {
+    public ModelAndView dishAdd(ModelMap model,
+                                @RequestParam String name,
+                                @RequestParam String dishCategory,
+                                @RequestParam double price,
+                                @RequestParam int weight,
+                                @RequestParam String photoLink,
+                                HttpServletRequest request) throws DishWithOutIngredientsException {
         HttpSession session = request.getSession();
         if (verify(session)) {
             List<String> ingredientNames = Arrays.asList(request.getParameterValues("ingredientName"));
@@ -133,18 +134,16 @@ public class DishAdminController {
     }
 
     @RequestMapping(value = "/dish/remove/{id}", method = RequestMethod.DELETE)
-    public ModelAndView dishRemove( ModelMap model,
-                                    @PathVariable int id,
-                                    HttpServletRequest request) {
+    public ModelAndView dishRemove(ModelMap model,
+                                   @PathVariable int id,
+                                   HttpServletRequest request) {
         HttpSession session = request.getSession();
         if (verify(session)) {
-           dishService.remove(id);
-           return new ModelAndView("redirect:/admin/dish", model);
+            dishService.remove(id);
+            return new ModelAndView("redirect:/admin/dish", model);
         }
         return new ModelAndView("adminLogin", model);
     }
-
-
 
     private boolean verify(HttpSession session) {
         String role = (String) session.getAttribute("role");

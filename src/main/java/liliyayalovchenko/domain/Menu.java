@@ -29,7 +29,7 @@ public class Menu {
     @JsonView(Views.Public.class)
     private String name;
 
-    @OneToMany(mappedBy="menu", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @OneToMany(mappedBy = "menu", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @LazyCollection(LazyCollectionOption.FALSE)
     //@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonView(Views.Internal.class)
@@ -40,7 +40,8 @@ public class Menu {
         this.name = name;
     }
 
-    public Menu() {}
+    public Menu() {
+    }
 
     public int getId() {
         return id;
@@ -66,25 +67,13 @@ public class Menu {
         this.dishList = dishList;
     }
 
-
-
     @Override
     public String toString() {
-       return "Menu{" +
+        return "Menu{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", dishList=" + printDishList() +
                 '}';
-    }
-
-    private String printDishList() {
-        StringBuilder dishPrint = new StringBuilder();
-        dishPrint.append("[ ");
-        for (Dish dish : dishList) {
-            dishPrint.append(dish.getName()).append(", ");
-        }
-        dishPrint.append(" ]");
-        return dishPrint.toString();
     }
 
     @Override
@@ -117,7 +106,6 @@ public class Menu {
 
     }
 
-
     public void addDishToMenu(Dish dish) {
         if (!dishList.contains(dish)) {
             dishList.add(dish);
@@ -125,6 +113,13 @@ public class Menu {
         dish.setMenu(this);
     }
 
-
-
+    private String printDishList() {
+        StringBuilder dishPrint = new StringBuilder();
+        dishPrint.append("[ ");
+        for (Dish dish : dishList) {
+            dishPrint.append(dish.getName()).append(", ");
+        }
+        dishPrint.append(" ]");
+        return dishPrint.toString();
+    }
 }

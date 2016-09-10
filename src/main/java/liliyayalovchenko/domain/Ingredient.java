@@ -26,7 +26,8 @@ public class Ingredient {
     @ManyToMany(mappedBy = "ingredients")
     private List<Dish> dishList;
 
-    public Ingredient() {}
+    public Ingredient() {
+    }
 
     public Ingredient(String name) {
         this.name = name;

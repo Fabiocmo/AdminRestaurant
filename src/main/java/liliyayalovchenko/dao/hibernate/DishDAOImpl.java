@@ -15,8 +15,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-//import javax.persistence.Query;
-
 public class DishDAOImpl implements DishDAO {
 
     @Autowired
@@ -88,14 +86,6 @@ public class DishDAOImpl implements DishDAO {
         } else {
             throw new RuntimeException("Cant get dish by this id! Error");
         }
-    }
-
-    @Override
-    @Transactional(propagation = Propagation.MANDATORY)
-    public List<Dish> search(String pattern) {
-        Query query = sessionFactory.getCurrentSession().createQuery("SELECT d FROM Dish d WHERE d.name LIKE :pattern", Dish.class);
-        query.setParameter("pattern", "%" + pattern + "%");
-        return (List<Dish>) query.getResultList();
     }
 
     private void createDish(String name, String dishCategory, double price, int weight, String photoLink, Dish dish) {

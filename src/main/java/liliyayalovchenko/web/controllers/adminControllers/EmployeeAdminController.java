@@ -30,7 +30,7 @@ public class EmployeeAdminController {
 
     @RequestMapping(value = "/employee/{id}", method = RequestMethod.GET)
     public ModelAndView employee(@PathVariable int id,
-                             HttpServletRequest request) throws EmployeeNotFoundException {
+                                 HttpServletRequest request) throws EmployeeNotFoundException {
         HttpSession session = request.getSession();
         ModelAndView modelAndView = new ModelAndView();
         if (verify(session)) {
@@ -64,7 +64,7 @@ public class EmployeeAdminController {
 
     @RequestMapping(value = "/employee/edit/{id}", method = RequestMethod.GET)
     public ModelAndView employeeEdit(@PathVariable int id,
-                                 HttpServletRequest request) throws EmployeeNotFoundException {
+                                     HttpServletRequest request) throws EmployeeNotFoundException {
         HttpSession session = request.getSession();
         ModelAndView modelAndView = new ModelAndView();
         if (verify(session)) {
@@ -85,15 +85,15 @@ public class EmployeeAdminController {
 
     @RequestMapping(value = "/employee/save/{id}", method = RequestMethod.POST)
     public ModelAndView employeeSave(@PathVariable int id,
-                                 ModelMap model,
-                                 @RequestParam String secondName,
-                                 @RequestParam String firstName,
-                                 @RequestParam String dateOfEmpl,
-                                 @RequestParam String phone,
-                                 @RequestParam String position,
-                                 @RequestParam int salary,
-                                 @RequestParam String photoLink,
-                                 HttpServletRequest request) throws WrongDateInputFormatException {
+                                     ModelMap model,
+                                     @RequestParam String secondName,
+                                     @RequestParam String firstName,
+                                     @RequestParam String dateOfEmpl,
+                                     @RequestParam String phone,
+                                     @RequestParam String position,
+                                     @RequestParam int salary,
+                                     @RequestParam String photoLink,
+                                     HttpServletRequest request) throws WrongDateInputFormatException {
         HttpSession session = request.getSession();
         if (verify(session)) {
             try {
@@ -108,8 +108,8 @@ public class EmployeeAdminController {
 
     @RequestMapping(value = "/employee/remove/{id}", method = RequestMethod.GET)
     public ModelAndView employeeRemove(@PathVariable int id,
-                                     ModelMap model,
-                                     HttpServletRequest request) throws EmployeeNotFoundException {
+                                       ModelMap model,
+                                       HttpServletRequest request) throws EmployeeNotFoundException {
         HttpSession session = request.getSession();
         if (verify(session)) {
             try {

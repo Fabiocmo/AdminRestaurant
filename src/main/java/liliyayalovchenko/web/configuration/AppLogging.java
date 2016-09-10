@@ -32,17 +32,12 @@ public class AppLogging {
     }
 
     @AfterThrowing("within(liliyayalovchenko.dao.hibernate.*)")
-    public void logExceptionsInDAO(JoinPoint joinPoint){
+    public void logExceptionsInDAO(JoinPoint joinPoint) {
         LOGGER.error("Exception thrown in dao implementation Method=" + joinPoint.toString());
     }
 
     @AfterThrowing("within(liliyayalovchenko.web.controllers.*)")
-    public void logExceptionsInControllers(JoinPoint joinPoint){
-        LOGGER.error("************************Exception thrown in controller Method="+joinPoint.toString() +"************************");
+    public void logExceptionsInControllers(JoinPoint joinPoint) {
+        LOGGER.error("************************Exception thrown in controller Method=" + joinPoint.toString() + "************************");
     }
-
-
-
-
-
 }

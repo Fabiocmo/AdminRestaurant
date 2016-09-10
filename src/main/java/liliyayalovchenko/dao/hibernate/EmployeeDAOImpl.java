@@ -69,44 +69,11 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
     @Override
     @Transactional(propagation = Propagation.MANDATORY)
-    public Employee getByFullName(String firstName, String secondName) {
-        Session session = sessionFactory.getCurrentSession();
-        Employee employee = (Employee) session.createQuery("select e from Employee e where e.firstName = :var1 and e.secondName= :var2")
-                .setParameter("var1", firstName)
-                .uniqueResult();
-
-        if (employee == null) {
-            throw new RuntimeException("Cant get employee by this name!Wrong name!");
-        } else {
-            return employee;
-        }
-    }
-
-    @Override
-    @Transactional(propagation = Propagation.MANDATORY)
     public List<Employee> getAllWaiters() {
         return sessionFactory.getCurrentSession()
                 .createQuery("select e from Employee e where e.position = :var1 or e.position = :var2")
                 .setParameter("var1", Position.WAITRESS)
                 .setParameter("var2", Position.WAITER)
                 .list();
-    }
-
-    @Override
-    @Transactional(propagation = Propagation.MANDATORY)
-    public List<Employee> getByFirstName(String employeeName) {
-        Session session = sessionFactory.getCurrentSession();
-        Query query = session.createQuery("select  e from Employee e where e.firstName =:employeeName");
-        query.setParameter("employeeName", employeeName);
-        return query.getResultList();
-    }
-
-    @Override
-    @Transactional(propagation = Propagation.MANDATORY)
-    public List<Employee> getBySecondName(String employeeSecondName) {
-        Session session = sessionFactory.getCurrentSession();
-        Query query = session.createQuery("select  e from Employee e where e.secondName =:employeeSecondName");
-        query.setParameter("employeeSecondName", employeeSecondName);
-        return query.getResultList();
     }
 }

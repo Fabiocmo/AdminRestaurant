@@ -104,7 +104,8 @@ public class Employee {
         this.photoLink = photoLink;
     }
 
-    public Employee() {}
+    public Employee() {
+    }
 
     public void setId(int id) {
         this.id = id;

@@ -12,8 +12,6 @@ public interface MenuDAO {
 
     void removeMenu(int menuId);
 
-    Menu getMenuByName(String name);
-
     void addDishToMenu(int menuId, Dish dish);
 
     void removeDishFromMenu(int menuId, Dish dish);

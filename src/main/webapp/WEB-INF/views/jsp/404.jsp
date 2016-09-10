@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <h2>Resource Not Found, please try another request or contact support.</h2>
+  <h2>Resource Not Found on ${url}, please try another request or contact support.</h2>
 
 </body>
 </html>

@@ -13,4 +13,6 @@ public class DishNotFoundException extends Exception {
     public DishNotFoundException(String name){
         super ("DishNotFoundException with name="+name);
     }
+
+
 }

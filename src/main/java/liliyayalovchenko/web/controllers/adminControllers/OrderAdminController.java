@@ -3,7 +3,9 @@ package liliyayalovchenko.web.controllers.adminControllers;
 import liliyayalovchenko.domain.Order;
 import liliyayalovchenko.service.EmployeeService;
 import liliyayalovchenko.service.OrderService;
+import liliyayalovchenko.web.exeptions.OrderNotFoundException;
 import liliyayalovchenko.web.exeptions.WrongDateInputFormatException;
+import org.hibernate.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -43,28 +45,39 @@ public class OrderAdminController {
 
     @RequestMapping(value = "/order/{id}", method = RequestMethod.GET)
     public ModelAndView order(@PathVariable int id,
-                              HttpServletRequest request) {
+                              HttpServletRequest request) throws OrderNotFoundException {
         HttpSession session = request.getSession();
         ModelAndView modelAndView = new ModelAndView();
         if (verify(session)) {
             modelAndView.setViewName("adminOrder");
-            modelAndView.addObject("order", orderService.getOrderById(id));
+            Order order;
+            try {
+                order = orderService.getOrderById(id);
+            } catch (ObjectNotFoundException ex) {
+                throw new OrderNotFoundException(id);
+            }
+            modelAndView.addObject("order", order);
             return modelAndView;
         }
         modelAndView.setViewName("adminLogin");
         return modelAndView;
     }
 
-
     @RequestMapping(value = "/order/filterByEmployee", method = RequestMethod.POST)
-    public ModelAndView orderFilterByEmployee(HttpServletRequest request) {
+    public ModelAndView orderFilterByEmployee(HttpServletRequest request) throws OrderNotFoundException {
         HttpSession session = request.getSession();
         ModelAndView modelAndView = new ModelAndView();
         if (verify(session)) {
             String employeeName = request.getParameter("name");
             modelAndView.setViewName("adminOrders");
             modelAndView.addObject("waiters", employeeService.getAllWaiters());
-            modelAndView.addObject("orders", orderService.getOrderByEmployee(employeeName));
+            List<Order> orders;
+            try {
+                orders = orderService.getOrderByEmployee(employeeName);
+            } catch (ObjectNotFoundException ex) {
+                throw new OrderNotFoundException(employeeName);
+            }
+            modelAndView.addObject("orders", orders);
             return modelAndView;
         }
         modelAndView.setViewName("adminLogin");

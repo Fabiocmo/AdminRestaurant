@@ -52,8 +52,8 @@ public class Order {
 
     @ManyToMany()
     @JoinTable(name = "ORDER_DISH",
-               joinColumns = @JoinColumn(name = "order_id"),
-               inverseJoinColumns = @JoinColumn(name = "dish_id"))
+            joinColumns = @JoinColumn(name = "order_id"),
+            inverseJoinColumns = @JoinColumn(name = "dish_id"))
     //@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @LazyCollection(LazyCollectionOption.FALSE)
     @JsonView(Views.Public.class)
@@ -68,12 +68,8 @@ public class Order {
         this.dishList = dishList;
     }
 
-    public Order() {}
-
-    public void addDishToOrder(Dish dish) {
-        dishList.add(dish);
+    public Order() {
     }
-
 
     public void setId(int id) {
         this.id = id;
@@ -186,5 +182,9 @@ public class Order {
         allDishInOrder.append(" ]");
 
         return allDishInOrder.toString();
+    }
+
+    public void addDishToOrder(Dish dish) {
+        dishList.add(dish);
     }
 }

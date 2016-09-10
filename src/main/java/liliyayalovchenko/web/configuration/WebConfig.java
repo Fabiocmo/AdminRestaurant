@@ -98,7 +98,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 
     @Bean
     public IngredientDAO ingredientDAO() {
-        return  new IngredientDAOImpl();
+        return new IngredientDAOImpl();
     }
 
     @Bean
@@ -106,9 +106,8 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         return new WarehouseDAOImpl();
     }
 
-
     @Bean
-    public RequestMappingHandlerAdapter requestMappingHandlerAdapter(List<HttpMessageConverter<?>> converters){
+    public RequestMappingHandlerAdapter requestMappingHandlerAdapter(List<HttpMessageConverter<?>> converters) {
         RequestMappingHandlerAdapter adapter = new RequestMappingHandlerAdapter();
         StringHttpMessageConverter stringConverter = new StringHttpMessageConverter();
         stringConverter.setWriteAcceptCharset(false);
@@ -141,7 +140,6 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
     }
-
 
     @Bean
     public UrlBasedViewResolver setupViewResolver() {
@@ -212,5 +210,4 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 
         return properties;
     }
-
 }

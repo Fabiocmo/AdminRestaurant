@@ -22,7 +22,7 @@ public class IngredientDAOImpl implements IngredientDAO {
     @Override
     @Transactional(propagation = Propagation.MANDATORY)
     public List<Ingredient> getAllIngredients() {
-       return sessionFactory.getCurrentSession().createQuery("select i from Ingredient i").list();
+        return sessionFactory.getCurrentSession().createQuery("select i from Ingredient i").list();
     }
 
     @Override

@@ -19,4 +19,5 @@ public interface WarehouseDAO {
     List<Warehouse> getAllOrderByName();
 
     List<Warehouse> getAllOrderByAmount();
+
 }
