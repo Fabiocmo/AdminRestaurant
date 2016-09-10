@@ -4,6 +4,9 @@ import liliyayalovchenko.domain.Dish;
 import liliyayalovchenko.domain.Menu;
 import liliyayalovchenko.service.DishService;
 import liliyayalovchenko.service.MenuService;
+import liliyayalovchenko.web.exeptions.DishNotFoundException;
+import liliyayalovchenko.web.exeptions.MenuNotFoundException;
+import org.hibernate.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -31,12 +34,18 @@ public class MenuAdminController {
 
     @RequestMapping(value = "/menu/{id}", method = RequestMethod.GET)
     public ModelAndView menu(@PathVariable int id,
-                             HttpServletRequest request) {
+                             HttpServletRequest request) throws MenuNotFoundException {
         HttpSession session = request.getSession();
         ModelAndView modelAndView = new ModelAndView();
         if (verify(session)) {
             modelAndView.setViewName("adminMenu");
-            modelAndView.addObject("menu", menuService.getMenuById(id));
+            Menu menuById;
+            try {
+                menuById = menuService.getMenuById(id);
+            } catch (ObjectNotFoundException ex) {
+                throw new MenuNotFoundException(id);
+            }
+            modelAndView.addObject("menu", menuById);
             return modelAndView;
         }
         modelAndView.setViewName("adminLogin");
@@ -45,13 +54,18 @@ public class MenuAdminController {
 
     @RequestMapping(value = "/menu/edit/{id}", method = RequestMethod.GET)
     public ModelAndView menuEdit(@PathVariable int id,
-                                 HttpServletRequest request) {
+                                 HttpServletRequest request) throws MenuNotFoundException {
         HttpSession session = request.getSession();
         ModelAndView modelAndView = new ModelAndView();
 
         if (verify(session)) {
             modelAndView.setViewName("adminMenuEdit");
-            Menu menu = menuService.getMenuById(id);
+            Menu menu;
+            try {
+                menu = menuService.getMenuById(id);
+            } catch (ObjectNotFoundException ex) {
+                throw new MenuNotFoundException(id);
+            }
             session.setAttribute("dishList", menu.getDishList());
             modelAndView.addObject("menu", menu);
             modelAndView.addObject("allDishes", dishService.getAllDishes());
@@ -66,10 +80,14 @@ public class MenuAdminController {
     public ModelAndView menuSave(@PathVariable int id,
                                  ModelMap model,
                                  @RequestParam String name,
-                                 HttpServletRequest request) {
+                                 HttpServletRequest request) throws MenuNotFoundException {
         HttpSession session = request.getSession();
         if (verify(session)) {
-            menuService.saveMenu(id, name);
+            try {
+                menuService.saveMenu(id, name);
+            } catch (ObjectNotFoundException ex) {
+                throw new MenuNotFoundException(id);
+            }
             return new ModelAndView("redirect:/admin/menu/{id}", model);
         }
         return new ModelAndView("adminLogin", model);
@@ -78,7 +96,7 @@ public class MenuAdminController {
     @RequestMapping(value = "/addDishToMenu/{id}", method = RequestMethod.POST)
     public ModelAndView menuSave(ModelMap model,
                                  @PathVariable int id,
-                                 HttpServletRequest request) {
+                                 HttpServletRequest request) throws MenuNotFoundException {
         HttpSession session = request.getSession();
         if (verify(session)) {
             List<Dish> dishList = (List<Dish>) session.getAttribute("dishList");
@@ -86,7 +104,12 @@ public class MenuAdminController {
             if (!dishList.contains(dishToAdd)) {
                 dishList.add(dishToAdd);
             }
-            Menu menu = menuService.getMenuById(id);
+            Menu menu;
+            try {
+                menu = menuService.getMenuById(id);
+            } catch (ObjectNotFoundException ex) {
+                throw new MenuNotFoundException(id);
+            }
             menuService.addDishToMenu(id, dishToAdd);
             menuService.updateDish(dishToAdd, menu);
             session.setAttribute("dishList", dishList);
@@ -98,14 +121,23 @@ public class MenuAdminController {
     @RequestMapping(value = "/removeDishFromMenu/{id}", method = RequestMethod.POST)
     public ModelAndView removeFromMenu(ModelMap model,
                                        @PathVariable int id,
-                                       HttpServletRequest request) {
+                                       HttpServletRequest request) throws DishNotFoundException, MenuNotFoundException {
         HttpSession session = request.getSession();
         if(verify(session)) {
             List<Dish> dishList = ((List<Dish>) session.getAttribute("dishList"));
             String dishToRemove= request.getParameterValues("dishName")[0];
-            Dish dishByName = dishService.getDishByName(dishToRemove);
+            Dish dishByName;
+            try {
+                dishByName = dishService.getDishByName(dishToRemove);
+            } catch (ObjectNotFoundException ex) {
+                throw new DishNotFoundException(dishToRemove);
+            }
 
-            menuService.removeDishFromMenu(id, dishByName);
+            try {
+                menuService.removeDishFromMenu(id, dishByName);
+            }catch (ObjectNotFoundException ex) {
+                throw new MenuNotFoundException(id);
+            }
             menuService.updateDish(dishByName, null);
             dishList.remove(dishByName);
             session.setAttribute("dishList", dishList);
@@ -120,10 +152,15 @@ public class MenuAdminController {
     @RequestMapping(value = "/menu/remove/{id}")
     public ModelAndView menuRemove(@PathVariable int id,
                                    ModelMap model,
-                                   HttpServletRequest request) {
+                                   HttpServletRequest request) throws MenuNotFoundException {
         HttpSession session = request.getSession();
         if (verify(session)) {
-            Menu menu = menuService.getMenuById(id);
+            Menu menu;
+            try {
+                menu = menuService.getMenuById(id);
+            } catch (ObjectNotFoundException ex) {
+                throw new MenuNotFoundException(id);
+            }
             menuService.removeMenu(id);
             for (Dish dish : menu.getDishList()) {
                 menuService.updateDish(dish, null);

@@ -5,6 +5,7 @@ import liliyayalovchenko.domain.Employee;
 import liliyayalovchenko.domain.Position;
 import liliyayalovchenko.service.EmployeeService;
 import liliyayalovchenko.web.exeptions.EmployeeNotFoundException;
+import liliyayalovchenko.web.exeptions.WrongDateInputFormatException;
 import org.hibernate.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -63,12 +64,17 @@ public class EmployeeAdminController {
 
     @RequestMapping(value = "/employee/edit/{id}", method = RequestMethod.GET)
     public ModelAndView employeeEdit(@PathVariable int id,
-                                 HttpServletRequest request) {
+                                 HttpServletRequest request) throws EmployeeNotFoundException {
         HttpSession session = request.getSession();
         ModelAndView modelAndView = new ModelAndView();
         if (verify(session)) {
             modelAndView.setViewName("adminEmployeeEdit");
-            Employee employeeById = employeeService.getEmployeeById(id);
+            Employee employeeById;
+            try {
+                employeeById = employeeService.getEmployeeById(id);
+            } catch (ObjectNotFoundException ex) {
+                throw new EmployeeNotFoundException(id);
+            }
             modelAndView.addObject("employee", employeeById);
             modelAndView.addObject("date", new SimpleDateFormat("dd-MM-yyyy").format(employeeById.getEmplDate()));
             return modelAndView;
@@ -87,13 +93,13 @@ public class EmployeeAdminController {
                                  @RequestParam String position,
                                  @RequestParam int salary,
                                  @RequestParam String photoLink,
-                                 HttpServletRequest request) {
+                                 HttpServletRequest request) throws WrongDateInputFormatException {
         HttpSession session = request.getSession();
         if (verify(session)) {
             try {
                 employeeService.saveEmployee(id, secondName, firstName, dateOfEmpl, phone, position, salary, photoLink);
             } catch (ParseException e) {
-                e.printStackTrace();//exeption hendler
+                throw new WrongDateInputFormatException(dateOfEmpl);
             }
             return new ModelAndView("redirect:/admin/employee/{id}", model);
         }
@@ -103,10 +109,14 @@ public class EmployeeAdminController {
     @RequestMapping(value = "/employee/remove/{id}", method = RequestMethod.GET)
     public ModelAndView employeeRemove(@PathVariable int id,
                                      ModelMap model,
-                                     HttpServletRequest request) {
+                                     HttpServletRequest request) throws EmployeeNotFoundException {
         HttpSession session = request.getSession();
         if (verify(session)) {
-            employeeService.remove(id);
+            try {
+                employeeService.remove(id);
+            } catch (ObjectNotFoundException ex) {
+                throw new EmployeeNotFoundException(id);
+            }
             return new ModelAndView("redirect:/admin/employee", model);
         }
         return new ModelAndView("adminLogin", model);
@@ -122,16 +132,11 @@ public class EmployeeAdminController {
                                         @RequestParam String position,
                                         @RequestParam int salary,
                                         @RequestParam String photoLink,
-                                        HttpServletRequest request) {
+                                        HttpServletRequest request) throws WrongDateInputFormatException {
         HttpSession session = request.getSession();
         if (verify(session)) {
             Employee employee;
-            if (position.equals("COOK")) {
-                employee = new Cook();
-                System.out.println("We have new cook");
-            } else {
-                employee = new Employee();
-            }
+            employee = position.equals("COOK") ? new Cook() : new Employee();
             employee.setFirstName(firstName);
             employee.setSecondName(secondName);
             employee.setPhone(phone);
@@ -154,11 +159,11 @@ public class EmployeeAdminController {
         }
     }
 
-    private void parseDate(String dateOfEmpl, Employee employee) {
+    private void parseDate(String dateOfEmpl, Employee employee) throws WrongDateInputFormatException {
         try {
             employee.setEmplDate(new SimpleDateFormat("dd-MM-yyyy").parse(dateOfEmpl));
         } catch (ParseException e) {
-            e.printStackTrace();
+            throw new WrongDateInputFormatException(dateOfEmpl);
         }
     }
 
@@ -166,5 +171,4 @@ public class EmployeeAdminController {
         String role = (String) session.getAttribute("role");
         return role != null && role.equals("admin");
     }
-
 }

@@ -14,6 +14,14 @@
   <link href="/resources/css/bootstrap.css" rel="stylesheet">
   <!-- Custom styles for this template -->
   <link href="/resources/css/carousel.css" rel="stylesheet">
+
+  <script type="text/javascript">
+    function AlertIt(id) {
+      var answer = confirm("You are about to delete employee " + id + ". Press OK to continue.")
+      if (answer)
+        window.location = "http://localhost:8080/admin/employee/remove/" + id + "";
+    }
+  </script>
 </head>
 <body>
 <!--Navigation bar-->
@@ -61,7 +69,7 @@
         <h2 style="color: #000000;font-size: 18px;">${employee.position}</h2>
         <h2 style="color: #000000;font-size: 18px;">${employee.phone}</h2>
         <img src="/resources/images/removeEmployee.png" width="24">
-        <a href="/admin/employee/remove/${employee.id}" style="text-decoration: none; color: darkred;">Delete</a>
+        <a href="javascript:AlertIt(${employee.id});" style="text-decoration: none; color: darkred;">Delete</a>
       </div><!-- /.col-lg-4 -->
     </c:forEach>
   </div><!-- /.row -->

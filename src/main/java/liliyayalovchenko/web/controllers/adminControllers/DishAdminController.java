@@ -1,8 +1,12 @@
 package liliyayalovchenko.web.controllers.adminControllers;
 
+import liliyayalovchenko.domain.Dish;
 import liliyayalovchenko.domain.Ingredient;
 import liliyayalovchenko.service.DishService;
 import liliyayalovchenko.service.IngredientService;
+import liliyayalovchenko.web.exeptions.DishNotFoundException;
+import liliyayalovchenko.web.exeptions.DishWithOutIngredientsException;
+import org.hibernate.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -30,12 +34,18 @@ public class DishAdminController {
 
     @RequestMapping(value = "/dish/{id}", method = RequestMethod.GET)
     public ModelAndView dish(@PathVariable int id,
-                             HttpServletRequest request) {
+                             HttpServletRequest request) throws DishNotFoundException {
         HttpSession session = request.getSession();
         ModelAndView modelAndView = new ModelAndView();
         if (verify(session)) {
             modelAndView.setViewName("adminDish");
-            modelAndView.addObject("dish", dishService.getDishById(id));
+            Dish dish;
+            try {
+                dish = dishService.getDishById(id);
+            } catch (ObjectNotFoundException ex) {
+                throw new DishNotFoundException(id);
+            }
+            modelAndView.addObject("dish", dish);
             return modelAndView;
         }
         modelAndView.setViewName("adminLogin");
@@ -106,10 +116,13 @@ public class DishAdminController {
                                  @RequestParam double price,
                                  @RequestParam int weight,
                                  @RequestParam String photoLink,
-                                 HttpServletRequest request) {
+                                 HttpServletRequest request) throws DishWithOutIngredientsException {
         HttpSession session = request.getSession();
         if (verify(session)) {
             List<String> ingredientNames = Arrays.asList(request.getParameterValues("ingredientName"));
+            if (ingredientNames.size() == 0) {
+                throw new DishWithOutIngredientsException();
+            }
             List<Ingredient> ingredients = ingredientNames.stream().
                     map(ingredientService::getIngredient).collect(Collectors.toList());
 

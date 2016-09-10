@@ -48,15 +48,6 @@ public class MainAdminController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/logout")
-    public ModelAndView adminAccess (HttpServletRequest request,
-                                     ModelMap model) {
-        HttpSession session = request.getSession();
-        session.removeAttribute("role");
-        return new ModelAndView("redirect:/admin/", model);
-    }
-
-
     private boolean verify(HttpSession session) {
         String role = (String) session.getAttribute("role");
         return role != null && role.equals("admin");

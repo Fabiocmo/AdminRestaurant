@@ -13,6 +13,13 @@
   <link href="/resources/css/bootstrap.css" rel="stylesheet">
   <!-- Custom styles for this template -->
   <link href="/resources/css/carousel.css" rel="stylesheet">
+  <script type="text/javascript">
+    function AlertIt(id) {
+      var answer = confirm("You are about to delete dish " + id + ". Press OK to continue.")
+      if (answer)
+        window.location = "http://localhost:8080/admin/dish/remove/" + id + "";
+    }
+  </script>
 </head>
 <body>
 <!--Navigation bar-->
@@ -75,10 +82,8 @@
             </div>
             <div class="col-xs-4">
               <h3 class="text-center" style="font-size: medium;">
-                <button type="submit" class="btn btn-success">
-                  <a href="/admin/dish/remove/${dish.id}"><img src="/resources/images/removeDish.png" width="24">
+                  <a href="javascript:AlertIt(${dish.id});"><img src="/resources/images/removeDish.png" width="24">
                   delete</a>
-                  </button>
               </h3>
             </div>
           </div>
