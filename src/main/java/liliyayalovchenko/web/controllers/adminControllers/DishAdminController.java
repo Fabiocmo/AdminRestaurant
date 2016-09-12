@@ -133,7 +133,7 @@ public class DishAdminController {
         return new ModelAndView("adminLogin", model);
     }
 
-    @RequestMapping(value = "/dish/remove/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/dish/remove/{id}", method = RequestMethod.GET)
     public ModelAndView dishRemove(ModelMap model,
                                    @PathVariable int id,
                                    HttpServletRequest request) {

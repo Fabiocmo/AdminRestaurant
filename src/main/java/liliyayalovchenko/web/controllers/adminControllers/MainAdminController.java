@@ -15,9 +15,14 @@ import javax.servlet.http.HttpSession;
 public class MainAdminController {
 
     @RequestMapping(value = "/")
-    public ModelAndView adminAccess() {
+    public ModelAndView adminAccess(HttpServletRequest request) {
+        HttpSession session = request.getSession();
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("adminLogin");
+        if (verify(session)) {
+            modelAndView.setViewName("index");
+        } else {
+            modelAndView.setViewName("adminLogin");
+        }
         return modelAndView;
     }
 
@@ -41,7 +46,7 @@ public class MainAdminController {
         HttpSession session = request.getSession();
         ModelAndView modelAndView = new ModelAndView();
         if (verify(session)) {
-            modelAndView.setViewName("adminIndex");
+            modelAndView.setViewName("index");
         } else {
             modelAndView.setViewName("adminLogin");
         }

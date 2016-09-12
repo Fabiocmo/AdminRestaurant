@@ -80,7 +80,8 @@ public class DishDAOImpl implements DishDAO {
     @Transactional(propagation = Propagation.MANDATORY)
     public Dish getDishById(int dishId) {
         Session session = sessionFactory.getCurrentSession();
-        Dish dish = session.load(Dish.class, dishId);
+        Dish dish = (Dish) session.createQuery("select d from Dish d where d.id = :var")
+                .setParameter("var", dishId).uniqueResult();
         if (dish != null) {
             return dish;
         } else {

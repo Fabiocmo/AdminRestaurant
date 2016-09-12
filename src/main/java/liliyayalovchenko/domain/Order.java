@@ -50,11 +50,10 @@ public class Order {
     @JsonView(Views.Public.class)
     private OrderStatus status;
 
-    @ManyToMany()
+    @ManyToMany(cascade ={CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH})
     @JoinTable(name = "ORDER_DISH",
             joinColumns = @JoinColumn(name = "order_id"),
             inverseJoinColumns = @JoinColumn(name = "dish_id"))
-    //@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @LazyCollection(LazyCollectionOption.FALSE)
     @JsonView(Views.Public.class)
     private List<Dish> dishList;

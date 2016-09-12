@@ -10,7 +10,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "WAREHOUSE")
 @Proxy(lazy = false)
-//@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Warehouse {
 
     @Id

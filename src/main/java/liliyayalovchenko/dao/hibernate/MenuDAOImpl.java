@@ -70,7 +70,6 @@ public class MenuDAOImpl implements MenuDAO {
         Session session = sessionFactory.getCurrentSession();
         dishByName.setMenu(menu);
         session.update(dishByName);
-        session.flush();
     }
 
     @Override

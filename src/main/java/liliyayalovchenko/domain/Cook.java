@@ -11,14 +11,12 @@ import javax.persistence.OneToMany;
 import java.util.List;
 
 @Entity
-//@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 @Proxy(lazy = false)
 public class Cook extends Employee {
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "employee_id")
     @LazyCollection(LazyCollectionOption.FALSE)
-    //@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     private List<ReadyMeal> readyMealList;
 
     public List<ReadyMeal> getReadyMealList() {

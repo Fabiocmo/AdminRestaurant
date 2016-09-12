@@ -44,10 +44,10 @@ public class IngredientDAOImpl implements IngredientDAO {
     @Transactional(propagation = Propagation.MANDATORY)
     public boolean exist(String ingredientName) {
         Session session = sessionFactory.getCurrentSession();
-        Set<Ingredient> allIngredient = (Set<Ingredient>) session
+        Set<Ingredient> allIngredient = new HashSet<>( session
                 .createQuery("select i from Ingredient i where i.name = :var")
                 .setParameter("var", ingredientName)
-                .list();
+                .list());
         return allIngredient.contains(new Ingredient(ingredientName));
     }
 

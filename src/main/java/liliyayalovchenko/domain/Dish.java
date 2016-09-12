@@ -13,7 +13,6 @@ import java.util.List;
 
 @Entity
 @Table(name = "DISH")
-//@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 @JsonIgnoreProperties(ignoreUnknown = false)
 @Proxy(lazy = false)
 public class Dish {
@@ -47,13 +46,19 @@ public class Dish {
             joinColumns = @JoinColumn(name = "dish_id"),
             inverseJoinColumns = @JoinColumn(name = "ingredient_id"))
     @LazyCollection(LazyCollectionOption.FALSE)
-    //@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonView(Views.Internal.class)
     private List<Ingredient> ingredients;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "menu_id", nullable = true)
     private Menu menu;
+
+    @ManyToMany(cascade ={CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH})
+    @JoinTable(name = "ORDER_DISH",
+            joinColumns = @JoinColumn(name = "dish_id"),
+            inverseJoinColumns = @JoinColumn(name = "order_id"))
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private List<Order> orderList;
 
     @Column(name = "photo")
     private String photoLink;
@@ -145,6 +150,14 @@ public class Dish {
         this.photoLink = photoLink;
     }
 
+    public void setOrderList(List<Order> orderList) {
+        this.orderList = orderList;
+    }
+
+    public List<Order> getOrderList() {
+        return orderList;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -183,8 +196,12 @@ public class Dish {
                 ", price=" + price +
                 ", weight=" + weight +
                 ", ingredients=" + printIngredientNames() +
-                ", menu=" + menu.getName() +
+                ", menu=" + printMenu() +
                 '}';
+    }
+
+    private String printMenu() {
+        return null != menu ? menu.getName() : "No_Menu";
     }
 
     private String printIngredientNames() {

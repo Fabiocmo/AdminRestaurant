@@ -13,7 +13,6 @@ import java.util.List;
 
 @Entity
 @Table(name = "MENU")
-//@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 @JsonIgnoreProperties(ignoreUnknown = false)
 @Proxy(lazy = false)
 public class Menu {
@@ -31,7 +30,6 @@ public class Menu {
 
     @OneToMany(mappedBy = "menu", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @LazyCollection(LazyCollectionOption.FALSE)
-    //@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonView(Views.Internal.class)
     private List<Dish> dishList;
 
@@ -122,4 +120,5 @@ public class Menu {
         dishPrint.append(" ]");
         return dishPrint.toString();
     }
+
 }

@@ -72,7 +72,7 @@
                 </div>
                 <div class="col-md-4">
                     <form action="/admin/warehouse/find" method="post">
-                        <input type="text" class="text-center" name="name" pattern="[A-Za-z]+"
+                        <input type="text" class="text-center" name="name" pattern="[A-Za-z ]+"
                                placeholder="enter ingredient name">
                     </form>
                 </div>
@@ -95,7 +95,7 @@
                                     href="/admin/warehouse/${ingredient.id}">${ingredient.ingredId.name}</a></td>
                             <td class="success">${ingredient.amount}</td>
                             <td class="success"><input type="radio" name="ingredName"
-                                                       value="${ingredient.ingredId.name}"></td>
+                                                       value="${ingredient.ingredId.name}" required></td>
                         </tr>
                     </c:forEach>
                     </tbody>
