@@ -9,6 +9,7 @@ import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.annotations.Proxy;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -105,20 +106,27 @@ public class Menu {
     }
 
     public void addDishToMenu(Dish dish) {
-        if (!dishList.contains(dish)) {
+        if (dishList != null && !dishList.contains(dish)) {
+            dishList.add(dish);
+        }
+        if (dishList == null) {
+            dishList = new ArrayList<>();
             dishList.add(dish);
         }
         dish.setMenu(this);
     }
 
     private String printDishList() {
-        StringBuilder dishPrint = new StringBuilder();
-        dishPrint.append("[ ");
-        for (Dish dish : dishList) {
-            dishPrint.append(dish.getName()).append(", ");
+        if (dishList == null || dishList.isEmpty()) {
+            return "Empty_dishList";
+        } else {
+            StringBuilder dishPrint = new StringBuilder();
+            dishPrint.append("[ ");
+            for (Dish dish : dishList) {
+                dishPrint.append(dish.getName()).append(", ");
+            }
+            dishPrint.append(" ]");
+            return dishPrint.toString();
         }
-        dishPrint.append(" ]");
-        return dishPrint.toString();
     }
-
 }

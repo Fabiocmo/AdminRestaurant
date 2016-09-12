@@ -4,6 +4,7 @@ import liliyayalovchenko.dao.DishDAO;
 import liliyayalovchenko.domain.Dish;
 import liliyayalovchenko.domain.DishCategory;
 import liliyayalovchenko.domain.Ingredient;
+import liliyayalovchenko.domain.Menu;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -23,7 +24,22 @@ public class DishDAOImpl implements DishDAO {
     @Override
     @Transactional(propagation = Propagation.MANDATORY)
     public void save(Dish dish) {
+        if (dish.getMenu() != null) {
+            addDishToMenu(dish.getMenu().getId(), dish);
+        }
         sessionFactory.getCurrentSession().save(dish);
+    }
+
+    @Transactional(propagation = Propagation.MANDATORY)
+    private void addDishToMenu(int menuId, Dish dish) {
+        Session session = sessionFactory.getCurrentSession();
+        Menu menu = session.load(Menu.class, menuId);
+        if (menu == null) {
+            throw new RuntimeException("Cant get menu by this id");
+        } else {
+            menu.addDishToMenu(dish);
+            session.update(menu);
+        }
     }
 
 

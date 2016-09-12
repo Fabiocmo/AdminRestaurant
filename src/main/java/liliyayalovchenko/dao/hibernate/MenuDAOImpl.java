@@ -22,11 +22,14 @@ public class MenuDAOImpl implements MenuDAO {
     @Override
     @Transactional(propagation = Propagation.MANDATORY)
     public void createMenu(Menu menu) {
-        for (Dish dish : menu.getDishList()) {
-            dish.setMenu(menu);
-            System.out.println(" menu was set for dish " + dish.getName());
-        }
+        List<Dish> dishList = menu.getDishList();
+        if (dishList != null) {
+            for (Dish dish : dishList) {
+                dish.setMenu(menu);
+                System.out.println(" menu was set for dish " + dish.getName());
+            }
 
+        }
         sessionFactory.getCurrentSession().save(menu);
     }
 
