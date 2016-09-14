@@ -18,7 +18,7 @@ public class MenuTest {
         menu = new Menu();
         menu.setName("Summer");
 
-        List<Dish> dishs = dishList();
+        List<Dish> dishs = dishList(generateIngredients());
         for (Dish dish : dishs) {
             dish.setMenu(menu);
         }
@@ -41,16 +41,23 @@ public class MenuTest {
 
     @Test
     public void testAddDishToMenu() throws Exception {
+        Dish dish = generateDish(generateIngredients(), "Fruit salads");
+        menu.addDishToMenu(dish);
+
+        assertTrue(menu.getDishList().contains(dish));
 
     }
 
-    private List<Dish> dishList() {
+    private List<Ingredient> generateIngredients() {
         List<Ingredient> ingredients = new ArrayList<>();
         ingredients.add(new Ingredient("Orange"));
         ingredients.add(new Ingredient("Lemon"));
+        return  ingredients;
+    }
 
-        Dish dish1 = generateDish(ingredients, "Juice");
-        Dish dish2 = generateDish(ingredients, "Fruit");
+    private List<Dish> dishList(List<Ingredient> ingredientList) {
+        Dish dish1 = generateDish(ingredientList, "Juice");
+        Dish dish2 = generateDish(ingredientList, "Fruit");
 
         List<Dish> dishList = new ArrayList<>();
         dishList.add(dish1);

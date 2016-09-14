@@ -5,6 +5,7 @@ import liliyayalovchenko.domain.DishCategory;
 import liliyayalovchenko.domain.Ingredient;
 import liliyayalovchenko.domain.Menu;
 import liliyayalovchenko.web.configuration.WebConfig;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,12 +19,23 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @ContextConfiguration(classes = {WebConfig.class}, loader = AnnotationConfigWebContextLoader.class)
-public class DishDAOTest {
+public class MenuDAOTest {
+
+    private Menu menu;
+
+    private List<Ingredient> ingredients;
+
+    private List<Dish> dishList;
+
+    private Dish dish1;
+
+    private Dish dish2;
 
     @Autowired
     private MenuDAO menuDAO;
@@ -34,61 +46,59 @@ public class DishDAOTest {
     @Autowired
     private IngredientDAO ingredientDAO;
 
-    @Test
-    @Transactional
-    @Rollback(true)
-    public void testSave() throws Exception {
-        Menu menu = createAndPersistMenu("Summer");
-        List<Ingredient> ingredients = createAndPersistIngredList();
-        Dish dish = createDish(ingredients, menu, DishCategory.DRINKS, "Melon fresh");
-
-        dishDAO.save(dish);
-
-        List<Dish> listDish = dishDAO.getAll();
-
-        assertTrue(listDish.contains(dish));
+    @Before
+    public void before() {
+        menu = createMenu("Summer");
+        ingredients = createAndPersistIngredList();
+        dishList = new ArrayList<>();
+        dish1 = createDish(ingredients, DishCategory.DRINKS, "Fresh");
+        dish2 = createDish(ingredients, DishCategory.SALADS, "Fruit salad");
+        dishDAO.save(dish1);
+        dishDAO.save(dish2);
+        dishList.add(dish1);
+        dishList.add(dish2);
+        menu.setDishList(dishList);
     }
 
     @Test
     @Transactional
     @Rollback(true)
-    public void testGetDishById() throws Exception {
-        Menu menu = createAndPersistMenu("Summer");
-        List<Ingredient> ingredients = createAndPersistIngredList();
-        Dish dish = createDish(ingredients, menu, DishCategory.DRINKS, "Melon fresh");
-
-        dishDAO.save(dish);
-
-        Dish dishById = dishDAO.getDishById(dish.getId());
-
-        assertEquals(dish.getName(), dishById.getName());
-        assertEquals(dish.getMenu(), dishById.getMenu());
-        assertTrue(dishById.getMenu().getDishList().contains(dish));
-        assertTrue(dishById.getIngredients().contains(ingredients.get(0)));
+    public void testCreateMenu() throws Exception {
+        menuDAO.createMenu(menu);
+        Menu menuById = menuDAO.getMenuById(menu.getId());
+        assertEquals(menuById, menu);
+        assertEquals(menuById.getDishList().get(0), dish1);
+        assertEquals(menuById.getDishList().get(1), dish2);
     }
 
-    @Test(expected=RuntimeException.class)
+    @Test
     @Transactional
     @Rollback(true)
-    public void testRemove() throws Exception {
-        Menu menu = createAndPersistMenu("Summer");
-        List<Ingredient> ingredients = createAndPersistIngredList();
-        Dish dish = createDish(ingredients, menu, DishCategory.DRINKS, "Melon fresh");
+    public void testAddDishToMenu() throws Exception {
+        menuDAO.createMenu(menu);
 
+        Dish dish = createDish(ingredients, DishCategory.SALADS, "Fresh fruits");
         dishDAO.save(dish);
+        menuDAO.addDishToMenu(menu.getId(), dish);
 
-        Dish dishById = dishDAO.getDishById(dish.getId());
-        assertNotNull(dishById);
-        assertTrue(dishById.getMenu().getDishList().contains(dish));
-
-        dishDAO.remove(dishById.getId());
-        dishDAO.getDishById(dishById.getId());
+        assertTrue(menu.getDishList().contains(dish));
     }
 
-    private Dish createDish(List<Ingredient> ingredients, Menu menu, DishCategory category, String name) {
+    @Test
+    @Transactional
+    @Rollback(true)
+    public void testUpdateDish() throws Exception {
+        menuDAO.createMenu(menu);
+        Dish dish = createDish(ingredients, DishCategory.SALADS, "Fresh fruit");
+        dishDAO.save(dish);
+
+        menuDAO.updateDish(dish, menu);
+        assertEquals(dish.getMenu(), menu);
+    }
+
+    private Dish createDish(List<Ingredient> ingredients, DishCategory category, String name) {
         Dish dish = new Dish();
         dish.setName(name);
-        dish.setMenu(menu);
         dish.setDishCategory(category);
         dish.setWeight(250);
         dish.setPrice(40);
@@ -96,10 +106,9 @@ public class DishDAOTest {
         return dish;
     }
 
-    private Menu createAndPersistMenu(String name) {
+    private Menu createMenu(String name) {
         Menu menu = new Menu();
         menu.setName(name);
-        menuDAO.createMenu(menu);
         return menu;
     }
 
