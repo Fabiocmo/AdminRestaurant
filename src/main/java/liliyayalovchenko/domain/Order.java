@@ -15,7 +15,6 @@ import java.util.List;
 
 @Entity
 @Table(name = "ORDER_FROM_MENU")
-//@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 @JsonIgnoreProperties(ignoreUnknown = false)
 @Proxy(lazy = false)
 public class Order {

@@ -1,0 +1,95 @@
+CREATE TABLE INGREDIENT
+(
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    name VARCHAR(60) NOT NULL
+);
+
+CREATE TABLE DISH
+(
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    name VARCHAR(120) NOT NULL,
+    category VARCHAR(60),
+    price DECIMAL(5,1),
+    weight INT NOT NULL,
+    menu_id INT,
+    photo VARCHAR(200)
+);
+
+CREATE TABLE DISH_INGREDIENT 
+(
+    dish_id INT NOT NULL ,
+    ingredient_id INT NOT NULL ,
+    PRIMARY KEY (dish_id, ingredient_id) ,
+ 
+   CONSTRAINT dish_fk FOREIGN KEY (dish_id) REFERENCES DISH (id)
+   ON DELETE NO ACTION ON UPDATE NO ACTION,
+   CONSTRAINT ingred_fk FOREIGN KEY (ingredient_id) REFERENCES INGREDIENT (id)
+   ON DELETE NO ACTION ON UPDATE NO ACTION
+);
+
+
+CREATE TABLE EMPLOYEE
+(
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    second_name VARCHAR(60) NOT NULL,
+    first_name VARCHAR(60) NOT NULL,
+    empl_date DATE NOT NULL,
+    phone VARCHAR(20),
+    position VARCHAR(120) NOT NULL,
+    salary INT NOT NULL,
+    dtype VARCHAR(60),
+    photo VARCHAR(200)
+);
+
+CREATE TABLE MENU
+(
+    id INT PRIMARY KEY NOT NULL,
+    name VARCHAR(255)
+);
+
+CREATE TABLE ORDER_FROM_MENU
+(
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    order_num INT NOT NULL,
+    employee_id INT,
+    table_num INT,
+    order_date DATETIME NOT NULL,
+    status VARCHAR(20),
+    FOREIGN KEY (employee_id) REFERENCES EMPLOYEE (id)
+);
+
+
+CREATE TABLE ORDER_DISH (
+  order_id int(11) DEFAULT NULL,
+  dish_id int(11) DEFAULT NULL,
+  KEY order_id (`order_id`),
+  KEY dish_id (`dish_id`),
+  CONSTRAINT `ORDER_DISH_ibfk_1` FOREIGN KEY (`order_id`) 
+  REFERENCES `ORDER_FROM_MENU` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `ORDER_DISH_ibfk_2` FOREIGN KEY (`dish_id`) 
+  REFERENCES `DISH` (`id`) ON DELETE NO ACTION  ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE READY_MEALS
+(
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    dish_numb INT,
+    dish_id INT,
+    employee_id INT,
+    order_id INT,
+    meal_date DATETIME NOT NULL,
+    dtype VARCHAR(60),
+    FOREIGN KEY (dish_id) REFERENCES DISH (id),
+    FOREIGN KEY (employee_id) REFERENCES EMPLOYEE (id),
+    FOREIGN KEY (order_id) REFERENCES ORDER_FROM_MENU (id)
+);
+
+CREATE TABLE WAREHOUSE
+(
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    ingred_id INT NOT NULL,
+    amount INT NOT NULL,
+    FOREIGN KEY (ingred_id) REFERENCES INGREDIENT (id)
+);
+
