@@ -1,6 +1,5 @@
 package liliyayalovchenko.web.controllers.adminControllers;
 
-import liliyayalovchenko.TestContext;
 import liliyayalovchenko.dao.IngredientDAO;
 import liliyayalovchenko.dao.WarehouseDAO;
 import liliyayalovchenko.domain.Ingredient;
@@ -29,7 +28,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {TestContext.class, WebConfig.class})
+@ContextConfiguration(classes = {WebConfig.class})
 @WebAppConfiguration
 public class WarehouseAdminControllerTest {
 

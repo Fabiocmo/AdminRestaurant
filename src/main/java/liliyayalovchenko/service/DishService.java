@@ -46,4 +46,9 @@ public class DishService {
     public void remove(int id) {
         dishDAO.remove(id);
     }
+
+    @Transactional
+    public void addDish(Dish dish) {
+        dishDAO.save(dish);
+    }
 }
