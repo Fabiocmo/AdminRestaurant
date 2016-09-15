@@ -106,7 +106,7 @@ public class WarehouseAdminController {
     public ModelAndView warehouseAdd(HttpServletRequest request,
                                      ModelMap model,
                                      @RequestParam String name,
-                                     @RequestParam int amount) {
+                                     @RequestParam int amount) throws IngredientNotFoundException {
         HttpSession session = request.getSession();
         if (verify(session)) {
             if (ingredientService.ifExist(name)) {
@@ -123,7 +123,7 @@ public class WarehouseAdminController {
 
     @RequestMapping(value = "/warehouse/remove", method = RequestMethod.POST)
     public ModelAndView warehouseRemove(HttpServletRequest request,
-                                        ModelMap model) {
+                                        ModelMap model) throws IngredientNotFoundException {
         HttpSession session = request.getSession();
         if (verify(session)) {
             String ingredientToRemove = request.getParameter("ingredName");

@@ -4,6 +4,7 @@ import liliyayalovchenko.dao.IngredientDAO;
 import liliyayalovchenko.dao.WarehouseDAO;
 import liliyayalovchenko.domain.Ingredient;
 import liliyayalovchenko.domain.Warehouse;
+import liliyayalovchenko.web.exeptions.IngredientNotFoundException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -32,7 +33,7 @@ public class WarehouseDAOImpl implements WarehouseDAO {
 
     @Override
     @Transactional(propagation = Propagation.MANDATORY)
-    public void removeIngredient(String ingredientName) {
+    public void removeIngredient(String ingredientName) throws IngredientNotFoundException {
         Session session = sessionFactory.getCurrentSession();
         Ingredient ingredientByName = ingredientDAO.getIngredientByName(ingredientName);
         Warehouse warehouse = (Warehouse) session.

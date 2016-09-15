@@ -112,11 +112,7 @@ public class EmployeeAdminController {
                                        HttpServletRequest request) throws EmployeeNotFoundException {
         HttpSession session = request.getSession();
         if (verify(session)) {
-            try {
-                employeeService.remove(id);
-            } catch (ObjectNotFoundException ex) {
-                throw new EmployeeNotFoundException(id);
-            }
+            employeeService.remove(id);
             return new ModelAndView("redirect:/admin/employee", model);
         }
         return new ModelAndView("adminLogin", model);

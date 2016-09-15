@@ -1,5 +1,6 @@
 package liliyayalovchenko;
 
+import liliyayalovchenko.service.DishService;
 import liliyayalovchenko.service.EmployeeService;
 import liliyayalovchenko.service.MenuService;
 import org.mockito.Mockito;
@@ -23,6 +24,11 @@ public class TestContext {
     @Bean
     public MenuService menuService() {
         return Mockito.mock(MenuService.class);
+    }
+
+    @Bean
+    public DishService dishServiceMock() {
+        return Mockito.mock(DishService.class);
     }
 
 }

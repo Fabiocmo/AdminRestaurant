@@ -558,3 +558,827 @@
 13:29:26.709 [main] INFO  l.web.configuration.AppLogging - Method : getAllIngredients
 13:29:26.709 [main] INFO  l.web.configuration.AppLogging - Arguments : []
 13:29:26.709 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+14:17:07.819 [MLog-Init-Reporter] INFO  com.mchange.v2.log.MLog - MLog clients using slf4j logging.
+14:17:07.948 [main] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+14:17:08.546 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.1.Final}
+14:17:08.549 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+14:17:08.551 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+14:17:08.620 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+14:17:08.785 [main] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 1, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> z8kfsx9jcn4psxew39fj|55dfcc6, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> z8kfsx9jcn4psxew39fj|55dfcc6, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/RestaurantCRM, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 1, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+14:17:09.232 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+14:21:00.229 [MLog-Init-Reporter] INFO  com.mchange.v2.log.MLog - MLog clients using slf4j logging.
+14:21:00.339 [main] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+14:21:00.965 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.1.Final}
+14:21:00.969 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+14:21:00.971 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+14:21:01.033 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+14:21:01.186 [main] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 1, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> z8kfsx9jcn9p4ez5paci|222eb8aa, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> z8kfsx9jcn9p4ez5paci|222eb8aa, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/RestaurantCRM, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 1, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+14:21:01.667 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+14:21:04.792 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+14:21:04.795 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.IngredientDAO.addIngredient(Ingredient))
+14:21:04.795 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+14:21:04.795 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=0, name='Mint'}]
+14:21:04.808 [main] DEBUG org.hibernate.SQL - select max(id) from INGREDIENT
+14:21:04.858 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.IngredientDAO.addIngredient(Ingredient))
+14:21:04.858 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+14:21:04.859 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=33, name='Mint'}]
+14:21:04.859 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+14:21:04.886 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+14:21:04.886 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.IngredientDAO.addIngredient(Ingredient))
+14:21:04.893 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+14:21:04.897 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=0, name='Melon'}]
+14:21:04.898 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.IngredientDAO.addIngredient(Ingredient))
+14:21:04.898 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+14:21:04.899 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=34, name='Melon'}]
+14:21:04.899 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:06:01.919 [MLog-Init-Reporter] INFO  com.mchange.v2.log.MLog - MLog clients using slf4j logging.
+15:06:02.021 [main] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+15:06:02.539 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.1.Final}
+15:06:02.544 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+15:06:02.546 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+15:06:02.625 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+15:06:02.823 [main] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 1, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> z8kfsx9jcovlrdwzadyq|93cf163, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> z8kfsx9jcovlrdwzadyq|93cf163, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/RestaurantCRM, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 1, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+15:06:03.327 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+15:06:06.561 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:06:06.564 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.IngredientDAO.addIngredient(Ingredient))
+15:06:06.564 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:06:06.564 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=0, name='Mint'}]
+15:06:06.577 [main] DEBUG org.hibernate.SQL - select max(id) from INGREDIENT
+15:06:06.622 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.IngredientDAO.addIngredient(Ingredient))
+15:06:06.623 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:06:06.624 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=33, name='Mint'}]
+15:06:06.624 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:06:06.626 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:06:06.627 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.WarehouseDAO.addIngredient(Ingredient,int))
+15:06:06.629 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:06:06.634 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=33, name='Mint'}, 40]
+15:06:06.635 [main] DEBUG org.hibernate.SQL - select max(id) from WAREHOUSE
+15:06:06.636 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.WarehouseDAO.addIngredient(Ingredient,int))
+15:06:06.637 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:06:06.637 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=33, name='Mint'}, 40]
+15:06:06.637 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:06:06.638 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:06:06.638 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.IngredientDAO.addIngredient(Ingredient))
+15:06:06.638 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:06:06.639 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=0, name='Melon'}]
+15:06:06.639 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.IngredientDAO.addIngredient(Ingredient))
+15:06:06.639 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:06:06.642 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=34, name='Melon'}]
+15:06:06.642 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:06:06.643 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:06:06.643 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.WarehouseDAO.addIngredient(Ingredient,int))
+15:06:06.643 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:06:06.643 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=34, name='Melon'}, 50]
+15:06:06.644 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.WarehouseDAO.addIngredient(Ingredient,int))
+15:06:06.644 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:06:06.644 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=34, name='Melon'}, 50]
+15:06:06.644 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:06:06.644 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:06:06.645 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getByName(String))
+15:06:06.645 [main] INFO  l.web.configuration.AppLogging - Method : getByName
+15:06:06.645 [main] INFO  l.web.configuration.AppLogging - Arguments : [Mint]
+15:06:06.672 [main] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+15:06:06.851 [main] DEBUG org.hibernate.SQL - insert into INGREDIENT (name, id) values (?, ?)
+15:06:07.163 [main] DEBUG org.hibernate.SQL - insert into WAREHOUSE (amount, ingred_id, id) values (?, ?, ?)
+15:06:07.166 [main] DEBUG org.hibernate.SQL - insert into INGREDIENT (name, id) values (?, ?)
+15:06:07.168 [main] DEBUG org.hibernate.SQL - insert into WAREHOUSE (amount, ingred_id, id) values (?, ?, ?)
+15:06:07.176 [main] DEBUG org.hibernate.SQL - select warehouse0_.id as id1_8_, warehouse0_.amount as amount2_8_, warehouse0_.ingred_id as ingred_i3_8_ from WAREHOUSE warehouse0_ cross join INGREDIENT ingredient1_ where warehouse0_.ingred_id=ingredient1_.id and ingredient1_.name=?
+15:06:07.203 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getByName(String))
+15:06:07.203 [main] INFO  l.web.configuration.AppLogging - Method : getByName
+15:06:07.204 [main] INFO  l.web.configuration.AppLogging - Arguments : [Mint]
+15:06:07.204 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:06:07.204 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:06:07.204 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getByName(String))
+15:06:07.205 [main] INFO  l.web.configuration.AppLogging - Method : getByName
+15:06:07.205 [main] INFO  l.web.configuration.AppLogging - Arguments : [Melon]
+15:06:07.205 [main] DEBUG org.hibernate.SQL - select warehouse0_.id as id1_8_, warehouse0_.amount as amount2_8_, warehouse0_.ingred_id as ingred_i3_8_ from WAREHOUSE warehouse0_ cross join INGREDIENT ingredient1_ where warehouse0_.ingred_id=ingredient1_.id and ingredient1_.name=?
+15:06:07.207 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getByName(String))
+15:06:07.208 [main] INFO  l.web.configuration.AppLogging - Method : getByName
+15:06:07.208 [main] INFO  l.web.configuration.AppLogging - Arguments : [Melon]
+15:06:07.209 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:06:07.280 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:06:07.280 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getAllIngredients())
+15:06:07.280 [main] INFO  l.web.configuration.AppLogging - Method : getAllIngredients
+15:06:07.281 [main] INFO  l.web.configuration.AppLogging - Arguments : []
+15:06:07.284 [main] DEBUG org.hibernate.SQL - select warehouse0_.id as id1_8_, warehouse0_.amount as amount2_8_, warehouse0_.ingred_id as ingred_i3_8_ from WAREHOUSE warehouse0_
+15:06:07.297 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:06:07.315 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:06:07.317 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:06:07.318 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:06:07.320 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:06:07.323 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:06:07.325 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:06:07.328 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:06:07.330 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:06:07.332 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:06:07.334 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:06:07.336 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:06:07.338 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:06:07.340 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:06:07.343 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:06:07.345 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:06:07.347 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:06:07.349 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:06:07.354 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:06:07.358 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:06:07.362 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:06:07.364 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:06:07.367 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:06:07.383 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:06:07.385 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:06:07.389 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:06:07.391 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:06:07.393 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:06:07.397 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:06:07.399 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:06:07.403 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getAllIngredients())
+15:06:07.403 [main] INFO  l.web.configuration.AppLogging - Method : getAllIngredients
+15:06:07.403 [main] INFO  l.web.configuration.AppLogging - Arguments : []
+15:06:07.403 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:11:05.752 [MLog-Init-Reporter] INFO  com.mchange.v2.log.MLog - MLog clients using slf4j logging.
+15:11:05.859 [main] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+15:11:06.383 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.1.Final}
+15:11:06.387 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+15:11:06.390 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+15:11:06.467 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+15:11:06.653 [main] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 1, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> z8kfsx9jcp2473nrl96v|93cf163, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> z8kfsx9jcp2473nrl96v|93cf163, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/RestaurantCRM, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 1, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+15:11:07.059 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+15:11:10.223 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:11:10.224 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.IngredientDAO.addIngredient(Ingredient))
+15:11:10.225 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:11:10.225 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=0, name='Mint'}]
+15:11:10.232 [main] DEBUG org.hibernate.SQL - select max(id) from INGREDIENT
+15:11:10.289 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.IngredientDAO.addIngredient(Ingredient))
+15:11:10.289 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:11:10.290 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=33, name='Mint'}]
+15:11:10.291 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:11:10.292 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:11:10.293 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.WarehouseDAO.addIngredient(Ingredient,int))
+15:11:10.296 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:11:10.300 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=33, name='Mint'}, 40]
+15:11:10.301 [main] DEBUG org.hibernate.SQL - select max(id) from WAREHOUSE
+15:11:10.302 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.WarehouseDAO.addIngredient(Ingredient,int))
+15:11:10.303 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:11:10.303 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=33, name='Mint'}, 40]
+15:11:10.303 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:11:10.304 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:11:10.304 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.IngredientDAO.addIngredient(Ingredient))
+15:11:10.304 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:11:10.305 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=0, name='Melon'}]
+15:11:10.305 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.IngredientDAO.addIngredient(Ingredient))
+15:11:10.306 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:11:10.306 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=34, name='Melon'}]
+15:11:10.307 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:11:10.307 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:11:10.307 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.WarehouseDAO.addIngredient(Ingredient,int))
+15:11:10.308 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:11:10.308 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=34, name='Melon'}, 50]
+15:11:10.308 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.WarehouseDAO.addIngredient(Ingredient,int))
+15:11:10.309 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:11:10.311 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=34, name='Melon'}, 50]
+15:11:10.312 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:11:10.313 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:11:10.313 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getByName(String))
+15:11:10.314 [main] INFO  l.web.configuration.AppLogging - Method : getByName
+15:11:10.314 [main] INFO  l.web.configuration.AppLogging - Arguments : [Mint]
+15:11:10.354 [main] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+15:11:10.576 [main] DEBUG org.hibernate.SQL - insert into INGREDIENT (name, id) values (?, ?)
+15:11:10.581 [main] DEBUG org.hibernate.SQL - insert into WAREHOUSE (amount, ingred_id, id) values (?, ?, ?)
+15:11:10.586 [main] DEBUG org.hibernate.SQL - insert into INGREDIENT (name, id) values (?, ?)
+15:11:10.588 [main] DEBUG org.hibernate.SQL - insert into WAREHOUSE (amount, ingred_id, id) values (?, ?, ?)
+15:11:10.594 [main] DEBUG org.hibernate.SQL - select warehouse0_.id as id1_8_, warehouse0_.amount as amount2_8_, warehouse0_.ingred_id as ingred_i3_8_ from WAREHOUSE warehouse0_ cross join INGREDIENT ingredient1_ where warehouse0_.ingred_id=ingredient1_.id and ingredient1_.name=?
+15:11:10.599 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getByName(String))
+15:11:10.599 [main] INFO  l.web.configuration.AppLogging - Method : getByName
+15:11:10.600 [main] INFO  l.web.configuration.AppLogging - Arguments : [Mint]
+15:11:10.600 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:11:10.600 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:11:10.600 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getByName(String))
+15:11:10.600 [main] INFO  l.web.configuration.AppLogging - Method : getByName
+15:11:10.600 [main] INFO  l.web.configuration.AppLogging - Arguments : [Melon]
+15:11:10.601 [main] DEBUG org.hibernate.SQL - select warehouse0_.id as id1_8_, warehouse0_.amount as amount2_8_, warehouse0_.ingred_id as ingred_i3_8_ from WAREHOUSE warehouse0_ cross join INGREDIENT ingredient1_ where warehouse0_.ingred_id=ingredient1_.id and ingredient1_.name=?
+15:11:10.603 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getByName(String))
+15:11:10.604 [main] INFO  l.web.configuration.AppLogging - Method : getByName
+15:11:10.604 [main] INFO  l.web.configuration.AppLogging - Arguments : [Melon]
+15:11:10.604 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:11:10.665 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:11:10.666 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getAllIngredients())
+15:11:10.666 [main] INFO  l.web.configuration.AppLogging - Method : getAllIngredients
+15:11:10.666 [main] INFO  l.web.configuration.AppLogging - Arguments : []
+15:11:10.669 [main] DEBUG org.hibernate.SQL - select warehouse0_.id as id1_8_, warehouse0_.amount as amount2_8_, warehouse0_.ingred_id as ingred_i3_8_ from WAREHOUSE warehouse0_
+15:11:10.682 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:10.702 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:10.704 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:10.706 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:10.708 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:10.711 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:10.713 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:10.715 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:10.717 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:10.719 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:10.722 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:10.724 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:10.725 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:10.727 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:10.729 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:10.732 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:10.733 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:10.735 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:10.737 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:10.739 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:10.741 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:10.743 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:10.745 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:10.746 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:10.748 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:10.750 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:10.752 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:10.754 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:10.758 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:10.760 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:10.762 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getAllIngredients())
+15:11:10.762 [main] INFO  l.web.configuration.AppLogging - Method : getAllIngredients
+15:11:10.762 [main] INFO  l.web.configuration.AppLogging - Arguments : []
+15:11:10.762 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:11:11.148 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:11:11.148 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.IngredientDAO.addIngredient(Ingredient))
+15:11:11.149 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:11:11.149 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=0, name='Mint'}]
+15:11:11.149 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.IngredientDAO.addIngredient(Ingredient))
+15:11:11.150 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:11:11.150 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=35, name='Mint'}]
+15:11:11.150 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:11:11.150 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:11:11.151 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.WarehouseDAO.addIngredient(Ingredient,int))
+15:11:11.151 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:11:11.151 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=35, name='Mint'}, 40]
+15:11:11.152 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.WarehouseDAO.addIngredient(Ingredient,int))
+15:11:11.152 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:11:11.152 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=35, name='Mint'}, 40]
+15:11:11.152 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:11:11.153 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:11:11.153 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getByName(String))
+15:11:11.153 [main] INFO  l.web.configuration.AppLogging - Method : getByName
+15:11:11.153 [main] INFO  l.web.configuration.AppLogging - Arguments : [Mint]
+15:11:11.154 [main] DEBUG org.hibernate.SQL - insert into INGREDIENT (name, id) values (?, ?)
+15:11:11.159 [main] DEBUG org.hibernate.SQL - insert into WAREHOUSE (amount, ingred_id, id) values (?, ?, ?)
+15:11:11.265 [main] DEBUG org.hibernate.SQL - select warehouse0_.id as id1_8_, warehouse0_.amount as amount2_8_, warehouse0_.ingred_id as ingred_i3_8_ from WAREHOUSE warehouse0_ cross join INGREDIENT ingredient1_ where warehouse0_.ingred_id=ingredient1_.id and ingredient1_.name=?
+15:11:11.268 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getByName(String))
+15:11:11.269 [main] INFO  l.web.configuration.AppLogging - Method : getByName
+15:11:11.269 [main] INFO  l.web.configuration.AppLogging - Arguments : [Mint]
+15:11:11.269 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:11:11.272 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:11:11.272 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getAllIngredients())
+15:11:11.273 [main] INFO  l.web.configuration.AppLogging - Method : getAllIngredients
+15:11:11.273 [main] INFO  l.web.configuration.AppLogging - Arguments : []
+15:11:11.273 [main] DEBUG org.hibernate.SQL - select warehouse0_.id as id1_8_, warehouse0_.amount as amount2_8_, warehouse0_.ingred_id as ingred_i3_8_ from WAREHOUSE warehouse0_
+15:11:11.288 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:11.290 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:11.294 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:11.296 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:11.298 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:11.301 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:11.306 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:11.310 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:11.311 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:11.314 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:11.316 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:11.318 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:11.320 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:11.323 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:11.325 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:11.327 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:11.329 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:11.333 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:11.336 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:11.338 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:11.342 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:11.357 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:11.360 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:11.366 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:11.368 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:11.370 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:11.372 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:11.373 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:11.375 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:11.376 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:11:11.378 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getAllIngredients())
+15:11:11.379 [main] INFO  l.web.configuration.AppLogging - Method : getAllIngredients
+15:11:11.379 [main] INFO  l.web.configuration.AppLogging - Arguments : []
+15:11:11.379 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:12:41.461 [MLog-Init-Reporter] INFO  com.mchange.v2.log.MLog - MLog clients using slf4j logging.
+15:12:41.595 [main] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+15:12:42.131 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.1.Final}
+15:12:42.136 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+15:12:42.139 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+15:12:42.213 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+15:12:42.390 [main] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 1, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> z8kfsx9jcp461zeaw08d|495b0487, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> z8kfsx9jcp461zeaw08d|495b0487, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/RestaurantCRM, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 1, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+15:12:42.820 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+15:12:45.968 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:12:45.970 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.IngredientDAO.addIngredient(Ingredient))
+15:12:45.970 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:12:45.971 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=0, name='Mint'}]
+15:12:45.978 [main] DEBUG org.hibernate.SQL - select max(id) from INGREDIENT
+15:12:46.022 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.IngredientDAO.addIngredient(Ingredient))
+15:12:46.023 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:12:46.023 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=33, name='Mint'}]
+15:12:46.023 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:12:46.025 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:12:46.026 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.WarehouseDAO.addIngredient(Ingredient,int))
+15:12:46.026 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:12:46.026 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=33, name='Mint'}, 40]
+15:12:46.027 [main] DEBUG org.hibernate.SQL - select max(id) from WAREHOUSE
+15:12:46.028 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.WarehouseDAO.addIngredient(Ingredient,int))
+15:12:46.029 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:12:46.029 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=33, name='Mint'}, 40]
+15:12:46.029 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:12:46.030 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:12:46.030 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.IngredientDAO.addIngredient(Ingredient))
+15:12:46.030 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:12:46.031 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=0, name='Melon'}]
+15:12:46.031 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.IngredientDAO.addIngredient(Ingredient))
+15:12:46.032 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:12:46.032 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=34, name='Melon'}]
+15:12:46.032 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:12:46.033 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:12:46.033 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.WarehouseDAO.addIngredient(Ingredient,int))
+15:12:46.033 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:12:46.034 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=34, name='Melon'}, 50]
+15:12:46.034 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.WarehouseDAO.addIngredient(Ingredient,int))
+15:12:46.035 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:12:46.037 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=34, name='Melon'}, 50]
+15:12:46.038 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:12:46.038 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:12:46.039 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getByName(String))
+15:12:46.039 [main] INFO  l.web.configuration.AppLogging - Method : getByName
+15:12:46.039 [main] INFO  l.web.configuration.AppLogging - Arguments : [Mint]
+15:12:46.064 [main] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+15:12:46.243 [main] DEBUG org.hibernate.SQL - insert into INGREDIENT (name, id) values (?, ?)
+15:12:46.249 [main] DEBUG org.hibernate.SQL - insert into WAREHOUSE (amount, ingred_id, id) values (?, ?, ?)
+15:12:46.260 [main] DEBUG org.hibernate.SQL - insert into INGREDIENT (name, id) values (?, ?)
+15:12:46.263 [main] DEBUG org.hibernate.SQL - insert into WAREHOUSE (amount, ingred_id, id) values (?, ?, ?)
+15:12:46.271 [main] DEBUG org.hibernate.SQL - select warehouse0_.id as id1_8_, warehouse0_.amount as amount2_8_, warehouse0_.ingred_id as ingred_i3_8_ from WAREHOUSE warehouse0_ cross join INGREDIENT ingredient1_ where warehouse0_.ingred_id=ingredient1_.id and ingredient1_.name=?
+15:12:46.284 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getByName(String))
+15:12:46.285 [main] INFO  l.web.configuration.AppLogging - Method : getByName
+15:12:46.285 [main] INFO  l.web.configuration.AppLogging - Arguments : [Mint]
+15:12:46.287 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:12:46.293 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:12:46.293 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getByName(String))
+15:12:46.293 [main] INFO  l.web.configuration.AppLogging - Method : getByName
+15:12:46.294 [main] INFO  l.web.configuration.AppLogging - Arguments : [Melon]
+15:12:46.295 [main] DEBUG org.hibernate.SQL - select warehouse0_.id as id1_8_, warehouse0_.amount as amount2_8_, warehouse0_.ingred_id as ingred_i3_8_ from WAREHOUSE warehouse0_ cross join INGREDIENT ingredient1_ where warehouse0_.ingred_id=ingredient1_.id and ingredient1_.name=?
+15:12:46.297 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getByName(String))
+15:12:46.297 [main] INFO  l.web.configuration.AppLogging - Method : getByName
+15:12:46.297 [main] INFO  l.web.configuration.AppLogging - Arguments : [Melon]
+15:12:46.298 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:12:46.394 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:12:46.395 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getAllIngredients())
+15:12:46.395 [main] INFO  l.web.configuration.AppLogging - Method : getAllIngredients
+15:12:46.395 [main] INFO  l.web.configuration.AppLogging - Arguments : []
+15:12:46.400 [main] DEBUG org.hibernate.SQL - select warehouse0_.id as id1_8_, warehouse0_.amount as amount2_8_, warehouse0_.ingred_id as ingred_i3_8_ from WAREHOUSE warehouse0_
+15:12:46.413 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:12:46.435 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:12:46.438 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:12:46.444 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:12:46.460 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:12:46.466 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:12:46.468 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:12:46.475 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:12:46.477 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:12:46.481 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:12:46.488 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:12:46.491 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:12:46.497 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:12:46.500 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:12:46.516 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:12:46.521 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:12:46.528 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:12:46.530 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:12:46.532 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:12:46.538 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:12:46.540 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:12:46.544 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:12:46.547 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:12:46.551 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:12:46.555 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:12:46.559 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:12:46.564 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:12:46.569 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:12:46.572 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:12:46.575 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:12:46.580 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getAllIngredients())
+15:12:46.580 [main] INFO  l.web.configuration.AppLogging - Method : getAllIngredients
+15:12:46.581 [main] INFO  l.web.configuration.AppLogging - Arguments : []
+15:12:46.581 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:12:46.823 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:12:46.823 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.IngredientDAO.addIngredient(Ingredient))
+15:12:46.824 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:12:46.824 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=0, name='Mint'}]
+15:12:46.824 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.IngredientDAO.addIngredient(Ingredient))
+15:12:46.825 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:12:46.825 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=35, name='Mint'}]
+15:12:46.825 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:12:46.826 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:12:46.826 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.WarehouseDAO.addIngredient(Ingredient,int))
+15:12:46.827 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:12:46.827 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=35, name='Mint'}, 40]
+15:12:46.827 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.WarehouseDAO.addIngredient(Ingredient,int))
+15:12:46.828 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:12:46.828 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=35, name='Mint'}, 40]
+15:12:46.828 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:12:46.828 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:12:46.829 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getByName(String))
+15:12:46.829 [main] INFO  l.web.configuration.AppLogging - Method : getByName
+15:12:46.829 [main] INFO  l.web.configuration.AppLogging - Arguments : [Mint]
+15:12:46.830 [main] DEBUG org.hibernate.SQL - insert into INGREDIENT (name, id) values (?, ?)
+15:12:46.831 [main] DEBUG org.hibernate.SQL - insert into WAREHOUSE (amount, ingred_id, id) values (?, ?, ?)
+15:12:46.833 [main] DEBUG org.hibernate.SQL - select warehouse0_.id as id1_8_, warehouse0_.amount as amount2_8_, warehouse0_.ingred_id as ingred_i3_8_ from WAREHOUSE warehouse0_ cross join INGREDIENT ingredient1_ where warehouse0_.ingred_id=ingredient1_.id and ingredient1_.name=?
+15:12:46.835 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getByName(String))
+15:12:46.836 [main] INFO  l.web.configuration.AppLogging - Method : getByName
+15:12:46.836 [main] INFO  l.web.configuration.AppLogging - Arguments : [Mint]
+15:12:46.836 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:12:46.853 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:12:46.854 [main] INFO  l.web.configuration.AppLogging - Method execution(Warehouse liliyayalovchenko.dao.WarehouseDAO.getIngredientById(int))
+15:12:46.854 [main] INFO  l.web.configuration.AppLogging - Method : getIngredientById
+15:12:46.854 [main] INFO  l.web.configuration.AppLogging - Arguments : [34]
+15:12:46.856 [main] INFO  l.web.configuration.AppLogging - Method execution(Warehouse liliyayalovchenko.dao.WarehouseDAO.getIngredientById(int))
+15:12:46.856 [main] INFO  l.web.configuration.AppLogging - Method : getIngredientById
+15:12:46.856 [main] INFO  l.web.configuration.AppLogging - Arguments : [34]
+15:12:46.857 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:17:38.252 [MLog-Init-Reporter] INFO  com.mchange.v2.log.MLog - MLog clients using slf4j logging.
+15:17:38.369 [main] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+15:17:39.085 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.1.Final}
+15:17:39.089 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+15:17:39.092 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+15:17:39.197 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+15:17:39.382 [main] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 1, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> z8kfsx9jcpaj1yjo7bdn|55dfcc6, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> z8kfsx9jcpaj1yjo7bdn|55dfcc6, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/RestaurantCRM, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 1, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+15:17:39.804 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+15:17:42.841 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:17:42.843 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.IngredientDAO.addIngredient(Ingredient))
+15:17:42.844 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:17:42.844 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=0, name='Mint'}]
+15:17:42.851 [main] DEBUG org.hibernate.SQL - select max(id) from INGREDIENT
+15:17:42.890 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.IngredientDAO.addIngredient(Ingredient))
+15:17:42.891 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:17:42.891 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=33, name='Mint'}]
+15:17:42.891 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:17:42.892 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:17:42.893 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.WarehouseDAO.addIngredient(Ingredient,int))
+15:17:42.893 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:17:42.893 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=33, name='Mint'}, 40]
+15:17:42.894 [main] DEBUG org.hibernate.SQL - select max(id) from WAREHOUSE
+15:17:42.896 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.WarehouseDAO.addIngredient(Ingredient,int))
+15:17:42.896 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:17:42.896 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=33, name='Mint'}, 40]
+15:17:42.897 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:17:42.897 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:17:42.897 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.IngredientDAO.addIngredient(Ingredient))
+15:17:42.898 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:17:42.898 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=0, name='Melon'}]
+15:17:42.899 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.IngredientDAO.addIngredient(Ingredient))
+15:17:42.899 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:17:42.899 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=34, name='Melon'}]
+15:17:42.899 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:17:42.900 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:17:42.900 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.WarehouseDAO.addIngredient(Ingredient,int))
+15:17:42.901 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:17:42.901 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=34, name='Melon'}, 50]
+15:17:42.902 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.WarehouseDAO.addIngredient(Ingredient,int))
+15:17:42.902 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:17:42.903 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=34, name='Melon'}, 50]
+15:17:42.903 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:17:42.903 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:17:42.904 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getByName(String))
+15:17:42.904 [main] INFO  l.web.configuration.AppLogging - Method : getByName
+15:17:42.904 [main] INFO  l.web.configuration.AppLogging - Arguments : [Mint]
+15:17:42.927 [main] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+15:17:43.098 [main] DEBUG org.hibernate.SQL - insert into INGREDIENT (name, id) values (?, ?)
+15:17:43.104 [main] DEBUG org.hibernate.SQL - insert into WAREHOUSE (amount, ingred_id, id) values (?, ?, ?)
+15:17:43.108 [main] DEBUG org.hibernate.SQL - insert into INGREDIENT (name, id) values (?, ?)
+15:17:43.110 [main] DEBUG org.hibernate.SQL - insert into WAREHOUSE (amount, ingred_id, id) values (?, ?, ?)
+15:17:43.237 [main] DEBUG org.hibernate.SQL - select warehouse0_.id as id1_8_, warehouse0_.amount as amount2_8_, warehouse0_.ingred_id as ingred_i3_8_ from WAREHOUSE warehouse0_ cross join INGREDIENT ingredient1_ where warehouse0_.ingred_id=ingredient1_.id and ingredient1_.name=?
+15:17:43.244 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getByName(String))
+15:17:43.244 [main] INFO  l.web.configuration.AppLogging - Method : getByName
+15:17:43.245 [main] INFO  l.web.configuration.AppLogging - Arguments : [Mint]
+15:17:43.245 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:17:43.245 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:17:43.246 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getByName(String))
+15:17:43.246 [main] INFO  l.web.configuration.AppLogging - Method : getByName
+15:17:43.246 [main] INFO  l.web.configuration.AppLogging - Arguments : [Melon]
+15:17:43.247 [main] DEBUG org.hibernate.SQL - select warehouse0_.id as id1_8_, warehouse0_.amount as amount2_8_, warehouse0_.ingred_id as ingred_i3_8_ from WAREHOUSE warehouse0_ cross join INGREDIENT ingredient1_ where warehouse0_.ingred_id=ingredient1_.id and ingredient1_.name=?
+15:17:43.249 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getByName(String))
+15:17:43.250 [main] INFO  l.web.configuration.AppLogging - Method : getByName
+15:17:43.250 [main] INFO  l.web.configuration.AppLogging - Arguments : [Melon]
+15:17:43.251 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:17:43.354 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:17:43.354 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getAllIngredients())
+15:17:43.355 [main] INFO  l.web.configuration.AppLogging - Method : getAllIngredients
+15:17:43.355 [main] INFO  l.web.configuration.AppLogging - Arguments : []
+15:17:43.359 [main] DEBUG org.hibernate.SQL - select warehouse0_.id as id1_8_, warehouse0_.amount as amount2_8_, warehouse0_.ingred_id as ingred_i3_8_ from WAREHOUSE warehouse0_
+15:17:43.389 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:17:43.420 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:17:43.429 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:17:43.432 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:17:43.435 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:17:43.444 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:17:43.449 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:17:43.452 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:17:43.457 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:17:43.463 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:17:43.465 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:17:43.468 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:17:43.469 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:17:43.476 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:17:43.478 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:17:43.482 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:17:43.485 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:17:43.490 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:17:43.492 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:17:43.494 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:17:43.496 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:17:43.497 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:17:43.499 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:17:43.500 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:17:43.501 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:17:43.503 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:17:43.508 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:17:43.509 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:17:43.511 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:17:43.513 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:17:43.515 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getAllIngredients())
+15:17:43.516 [main] INFO  l.web.configuration.AppLogging - Method : getAllIngredients
+15:17:43.516 [main] INFO  l.web.configuration.AppLogging - Arguments : []
+15:17:43.516 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:17:43.643 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:17:43.644 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.IngredientDAO.addIngredient(Ingredient))
+15:17:43.644 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:17:43.644 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=0, name='Mint'}]
+15:17:43.645 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.IngredientDAO.addIngredient(Ingredient))
+15:17:43.645 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:17:43.645 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=35, name='Mint'}]
+15:17:43.646 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:17:43.646 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:17:43.647 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.WarehouseDAO.addIngredient(Ingredient,int))
+15:17:43.647 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:17:43.647 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=35, name='Mint'}, 40]
+15:17:43.648 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.WarehouseDAO.addIngredient(Ingredient,int))
+15:17:43.648 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:17:43.648 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=35, name='Mint'}, 40]
+15:17:43.649 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:17:43.649 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:17:43.649 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getByName(String))
+15:17:43.650 [main] INFO  l.web.configuration.AppLogging - Method : getByName
+15:17:43.650 [main] INFO  l.web.configuration.AppLogging - Arguments : [Mint]
+15:17:43.651 [main] DEBUG org.hibernate.SQL - insert into INGREDIENT (name, id) values (?, ?)
+15:17:43.654 [main] DEBUG org.hibernate.SQL - insert into WAREHOUSE (amount, ingred_id, id) values (?, ?, ?)
+15:17:43.659 [main] DEBUG org.hibernate.SQL - select warehouse0_.id as id1_8_, warehouse0_.amount as amount2_8_, warehouse0_.ingred_id as ingred_i3_8_ from WAREHOUSE warehouse0_ cross join INGREDIENT ingredient1_ where warehouse0_.ingred_id=ingredient1_.id and ingredient1_.name=?
+15:17:43.660 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getByName(String))
+15:17:43.661 [main] INFO  l.web.configuration.AppLogging - Method : getByName
+15:17:43.661 [main] INFO  l.web.configuration.AppLogging - Arguments : [Mint]
+15:17:43.661 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:17:43.681 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:17:43.681 [main] INFO  l.web.configuration.AppLogging - Method execution(Warehouse liliyayalovchenko.dao.WarehouseDAO.getIngredientById(int))
+15:17:43.681 [main] INFO  l.web.configuration.AppLogging - Method : getIngredientById
+15:17:43.681 [main] INFO  l.web.configuration.AppLogging - Arguments : [34]
+15:17:43.682 [main] INFO  l.web.configuration.AppLogging - Method execution(Warehouse liliyayalovchenko.dao.WarehouseDAO.getIngredientById(int))
+15:17:43.683 [main] INFO  l.web.configuration.AppLogging - Method : getIngredientById
+15:17:43.683 [main] INFO  l.web.configuration.AppLogging - Arguments : [34]
+15:17:43.683 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:18:43.064 [MLog-Init-Reporter] INFO  com.mchange.v2.log.MLog - MLog clients using slf4j logging.
+15:18:43.196 [main] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+15:18:43.798 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.1.Final}
+15:18:43.802 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+15:18:43.805 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+15:18:43.884 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+15:18:44.034 [main] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 1, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> z8kfsx9jcpbx2o1uj1en3|55dfcc6, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> z8kfsx9jcpbx2o1uj1en3|55dfcc6, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/RestaurantCRM, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 1, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+15:18:44.474 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+15:18:47.602 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:18:47.606 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.IngredientDAO.addIngredient(Ingredient))
+15:18:47.606 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:18:47.607 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=0, name='Mint'}]
+15:18:47.618 [main] DEBUG org.hibernate.SQL - select max(id) from INGREDIENT
+15:18:47.676 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.IngredientDAO.addIngredient(Ingredient))
+15:18:47.676 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:18:47.677 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=33, name='Mint'}]
+15:18:47.677 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:18:47.680 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:18:47.680 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.WarehouseDAO.addIngredient(Ingredient,int))
+15:18:47.682 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:18:47.683 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=33, name='Mint'}, 40]
+15:18:47.695 [main] DEBUG org.hibernate.SQL - select max(id) from WAREHOUSE
+15:18:47.697 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.WarehouseDAO.addIngredient(Ingredient,int))
+15:18:47.697 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:18:47.698 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=33, name='Mint'}, 40]
+15:18:47.698 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:18:47.698 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:18:47.699 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.IngredientDAO.addIngredient(Ingredient))
+15:18:47.699 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:18:47.699 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=0, name='Melon'}]
+15:18:47.700 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.IngredientDAO.addIngredient(Ingredient))
+15:18:47.700 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:18:47.700 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=34, name='Melon'}]
+15:18:47.701 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:18:47.701 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:18:47.702 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.WarehouseDAO.addIngredient(Ingredient,int))
+15:18:47.702 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:18:47.702 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=34, name='Melon'}, 50]
+15:18:47.703 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.WarehouseDAO.addIngredient(Ingredient,int))
+15:18:47.704 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:18:47.704 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=34, name='Melon'}, 50]
+15:18:47.704 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:18:47.705 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:18:47.706 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getByName(String))
+15:18:47.706 [main] INFO  l.web.configuration.AppLogging - Method : getByName
+15:18:47.706 [main] INFO  l.web.configuration.AppLogging - Arguments : [Mint]
+15:18:47.731 [main] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+15:18:47.904 [main] DEBUG org.hibernate.SQL - insert into INGREDIENT (name, id) values (?, ?)
+15:18:47.908 [main] DEBUG org.hibernate.SQL - insert into WAREHOUSE (amount, ingred_id, id) values (?, ?, ?)
+15:18:47.914 [main] DEBUG org.hibernate.SQL - insert into INGREDIENT (name, id) values (?, ?)
+15:18:47.916 [main] DEBUG org.hibernate.SQL - insert into WAREHOUSE (amount, ingred_id, id) values (?, ?, ?)
+15:18:47.926 [main] DEBUG org.hibernate.SQL - select warehouse0_.id as id1_8_, warehouse0_.amount as amount2_8_, warehouse0_.ingred_id as ingred_i3_8_ from WAREHOUSE warehouse0_ cross join INGREDIENT ingredient1_ where warehouse0_.ingred_id=ingredient1_.id and ingredient1_.name=?
+15:18:47.935 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getByName(String))
+15:18:47.936 [main] INFO  l.web.configuration.AppLogging - Method : getByName
+15:18:47.936 [main] INFO  l.web.configuration.AppLogging - Arguments : [Mint]
+15:18:47.936 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:18:47.937 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:18:47.937 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getByName(String))
+15:18:47.937 [main] INFO  l.web.configuration.AppLogging - Method : getByName
+15:18:47.938 [main] INFO  l.web.configuration.AppLogging - Arguments : [Melon]
+15:18:47.939 [main] DEBUG org.hibernate.SQL - select warehouse0_.id as id1_8_, warehouse0_.amount as amount2_8_, warehouse0_.ingred_id as ingred_i3_8_ from WAREHOUSE warehouse0_ cross join INGREDIENT ingredient1_ where warehouse0_.ingred_id=ingredient1_.id and ingredient1_.name=?
+15:18:47.941 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getByName(String))
+15:18:47.941 [main] INFO  l.web.configuration.AppLogging - Method : getByName
+15:18:47.942 [main] INFO  l.web.configuration.AppLogging - Arguments : [Melon]
+15:18:47.942 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:18:48.025 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:18:48.026 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getAllIngredients())
+15:18:48.026 [main] INFO  l.web.configuration.AppLogging - Method : getAllIngredients
+15:18:48.026 [main] INFO  l.web.configuration.AppLogging - Arguments : []
+15:18:48.030 [main] DEBUG org.hibernate.SQL - select warehouse0_.id as id1_8_, warehouse0_.amount as amount2_8_, warehouse0_.ingred_id as ingred_i3_8_ from WAREHOUSE warehouse0_
+15:18:48.042 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:18:48.061 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:18:48.063 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:18:48.065 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:18:48.068 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:18:48.069 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:18:48.074 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:18:48.078 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:18:48.080 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:18:48.083 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:18:48.086 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:18:48.089 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:18:48.093 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:18:48.096 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:18:48.099 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:18:48.107 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:18:48.112 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:18:48.115 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:18:48.117 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:18:48.124 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:18:48.127 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:18:48.129 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:18:48.132 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:18:48.133 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:18:48.135 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:18:48.138 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:18:48.141 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:18:48.143 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:18:48.145 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:18:48.147 [main] DEBUG org.hibernate.SQL - select ingredient0_.id as id1_3_0_, ingredient0_.name as name2_3_0_ from INGREDIENT ingredient0_ where ingredient0_.id=?
+15:18:48.149 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getAllIngredients())
+15:18:48.150 [main] INFO  l.web.configuration.AppLogging - Method : getAllIngredients
+15:18:48.150 [main] INFO  l.web.configuration.AppLogging - Arguments : []
+15:18:48.150 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:18:48.283 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:18:48.283 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.IngredientDAO.addIngredient(Ingredient))
+15:18:48.284 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:18:48.284 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=0, name='Mint'}]
+15:18:48.284 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.IngredientDAO.addIngredient(Ingredient))
+15:18:48.285 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:18:48.285 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=35, name='Mint'}]
+15:18:48.285 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:18:48.286 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:18:48.286 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.WarehouseDAO.addIngredient(Ingredient,int))
+15:18:48.286 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:18:48.286 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=35, name='Mint'}, 40]
+15:18:48.287 [main] INFO  l.web.configuration.AppLogging - Method execution(void liliyayalovchenko.dao.WarehouseDAO.addIngredient(Ingredient,int))
+15:18:48.287 [main] INFO  l.web.configuration.AppLogging - Method : addIngredient
+15:18:48.288 [main] INFO  l.web.configuration.AppLogging - Arguments : [Ingredient{id=35, name='Mint'}, 40]
+15:18:48.288 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:18:48.289 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:18:48.289 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getByName(String))
+15:18:48.289 [main] INFO  l.web.configuration.AppLogging - Method : getByName
+15:18:48.289 [main] INFO  l.web.configuration.AppLogging - Arguments : [Mint]
+15:18:48.290 [main] DEBUG org.hibernate.SQL - insert into INGREDIENT (name, id) values (?, ?)
+15:18:48.292 [main] DEBUG org.hibernate.SQL - insert into WAREHOUSE (amount, ingred_id, id) values (?, ?, ?)
+15:18:48.295 [main] DEBUG org.hibernate.SQL - select warehouse0_.id as id1_8_, warehouse0_.amount as amount2_8_, warehouse0_.ingred_id as ingred_i3_8_ from WAREHOUSE warehouse0_ cross join INGREDIENT ingredient1_ where warehouse0_.ingred_id=ingredient1_.id and ingredient1_.name=?
+15:18:48.300 [main] INFO  l.web.configuration.AppLogging - Method execution(List liliyayalovchenko.dao.WarehouseDAO.getByName(String))
+15:18:48.302 [main] INFO  l.web.configuration.AppLogging - Method : getByName
+15:18:48.302 [main] INFO  l.web.configuration.AppLogging - Arguments : [Mint]
+15:18:48.302 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:18:48.323 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:18:48.324 [main] INFO  l.web.configuration.AppLogging - Method execution(Warehouse liliyayalovchenko.dao.WarehouseDAO.getIngredientById(int))
+15:18:48.324 [main] INFO  l.web.configuration.AppLogging - Method : getIngredientById
+15:18:48.324 [main] INFO  l.web.configuration.AppLogging - Arguments : [34]
+15:18:48.326 [main] INFO  l.web.configuration.AppLogging - Method execution(Warehouse liliyayalovchenko.dao.WarehouseDAO.getIngredientById(int))
+15:18:48.327 [main] INFO  l.web.configuration.AppLogging - Method : getIngredientById
+15:18:48.327 [main] INFO  l.web.configuration.AppLogging - Arguments : [34]
+15:18:48.330 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:42:22.057 [MLog-Init-Reporter] INFO  com.mchange.v2.log.MLog - MLog clients using slf4j logging.
+15:42:22.231 [main] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+15:42:22.880 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.1.Final}
+15:42:22.885 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+15:42:22.888 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+15:42:22.996 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+15:42:23.292 [main] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 1, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> z8kfsx9jcq6bz81u0vq9i|7ce97ee5, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> z8kfsx9jcq6bz81u0vq9i|7ce97ee5, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/RestaurantCRM, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 1, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+15:42:24.075 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+15:46:38.297 [MLog-Init-Reporter] INFO  com.mchange.v2.log.MLog - MLog clients using slf4j logging.
+15:46:38.443 [main] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+15:46:38.996 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.1.Final}
+15:46:39.000 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+15:46:39.001 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+15:46:39.077 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+15:46:39.243 [main] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 1, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> z8kfsx9jcqbtp11vbolq1|7fe7c640, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> z8kfsx9jcqbtp11vbolq1|7fe7c640, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/RestaurantCRM, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 1, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+15:46:39.796 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+15:47:24.392 [MLog-Init-Reporter] INFO  com.mchange.v2.log.MLog - MLog clients using slf4j logging.
+15:47:24.527 [main] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+15:47:25.030 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.1.Final}
+15:47:25.034 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+15:47:25.037 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+15:47:25.115 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+15:47:25.304 [main] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 1, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> z8kfsx9jcqct95mspz2z|7fe7c640, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> z8kfsx9jcqct95mspz2z|7fe7c640, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/RestaurantCRM, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 1, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+15:47:25.864 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+15:47:28.981 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:47:28.983 [main] INFO  l.web.configuration.AppLogging - Method execution(Dish liliyayalovchenko.dao.DishDAO.getDishById(int))
+15:47:28.983 [main] INFO  l.web.configuration.AppLogging - Method : getDishById
+15:47:28.983 [main] INFO  l.web.configuration.AppLogging - Arguments : [50]
+15:47:29.002 [main] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+15:47:29.142 [main] DEBUG org.hibernate.SQL - select dish0_.id as id1_0_, dish0_.category as category2_0_, dish0_.menu_id as menu_id7_0_, dish0_.name as name3_0_, dish0_.photo as photo4_0_, dish0_.price as price5_0_, dish0_.weight as weight6_0_ from DISH dish0_ where dish0_.id=?
+15:47:29.193 [main] INFO  l.web.configuration.AppLogging - Method execution(Dish liliyayalovchenko.dao.DishDAO.getDishById(int))
+15:47:29.193 [main] INFO  l.web.configuration.AppLogging - Method : getDishById
+15:47:29.193 [main] INFO  l.web.configuration.AppLogging - Arguments : [50]
+15:47:29.194 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:47:29.194 [main] ERROR l.web.configuration.AppLogging - Exception thrown in dao implementation Method=execution(Dish liliyayalovchenko.dao.DishDAO.getDishById(int))
+15:47:29.202 [main] ERROR l.w.c.E.GlobalExceptionHandler - Requested URL=http://localhost/admin/dish/50
+15:47:29.203 [main] ERROR l.w.c.E.GlobalExceptionHandler - Exception Raised=java.lang.RuntimeException: Cant get dish by this id! Error
+15:48:38.297 [MLog-Init-Reporter] INFO  com.mchange.v2.log.MLog - MLog clients using slf4j logging.
+15:48:38.417 [main] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+15:48:38.939 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.1.Final}
+15:48:38.943 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+15:48:38.946 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+15:48:39.015 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+15:48:39.211 [main] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 1, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> z8kfsx9jcqeea51w70et3|32c8e539, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> z8kfsx9jcqeea51w70et3|32c8e539, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/RestaurantCRM, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 1, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+15:48:39.769 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+15:48:42.847 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:48:42.851 [main] INFO  l.web.configuration.AppLogging - Method execution(Dish liliyayalovchenko.dao.DishDAO.getDishById(int))
+15:48:42.851 [main] INFO  l.web.configuration.AppLogging - Method : getDishById
+15:48:42.851 [main] INFO  l.web.configuration.AppLogging - Arguments : [50]
+15:48:42.867 [main] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+15:48:43.043 [main] DEBUG org.hibernate.SQL - select dish0_.id as id1_0_, dish0_.category as category2_0_, dish0_.menu_id as menu_id7_0_, dish0_.name as name3_0_, dish0_.photo as photo4_0_, dish0_.price as price5_0_, dish0_.weight as weight6_0_ from DISH dish0_ where dish0_.id=?
+15:48:43.097 [main] INFO  l.web.configuration.AppLogging - Method execution(Dish liliyayalovchenko.dao.DishDAO.getDishById(int))
+15:48:43.098 [main] INFO  l.web.configuration.AppLogging - Method : getDishById
+15:48:43.099 [main] INFO  l.web.configuration.AppLogging - Arguments : [50]
+15:48:43.099 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:48:43.099 [main] ERROR l.web.configuration.AppLogging - Exception thrown in dao implementation Method=execution(Dish liliyayalovchenko.dao.DishDAO.getDishById(int))
+15:48:43.113 [main] ERROR l.w.c.E.GlobalExceptionHandler - Requested URL=http://localhost/admin/dish/50
+15:48:43.113 [main] ERROR l.w.c.E.GlobalExceptionHandler - Exception Raised=java.lang.RuntimeException: Cant get dish by this id! Error
+15:55:19.313 [MLog-Init-Reporter] INFO  com.mchange.v2.log.MLog - MLog clients using slf4j logging.
+15:55:19.472 [main] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+15:55:20.044 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.1.Final}
+15:55:20.048 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+15:55:20.051 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+15:55:20.140 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+15:55:20.324 [main] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 1, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> z8kfsx9jcqmzpzs3fspc|7ce97ee5, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> z8kfsx9jcqmzpzs3fspc|7ce97ee5, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/RestaurantCRM, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 1, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+15:55:20.732 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+15:55:23.724 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+15:55:23.726 [main] INFO  l.web.configuration.AppLogging - Method execution(Dish liliyayalovchenko.dao.DishDAO.getDishById(int))
+15:55:23.727 [main] INFO  l.web.configuration.AppLogging - Method : getDishById
+15:55:23.727 [main] INFO  l.web.configuration.AppLogging - Arguments : [50]
+15:55:23.750 [main] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+15:55:23.921 [main] DEBUG org.hibernate.SQL - select dish0_.id as id1_0_, dish0_.category as category2_0_, dish0_.menu_id as menu_id7_0_, dish0_.name as name3_0_, dish0_.photo as photo4_0_, dish0_.price as price5_0_, dish0_.weight as weight6_0_ from DISH dish0_ where dish0_.id=?
+15:55:23.952 [main] INFO  l.web.configuration.AppLogging - Method execution(Dish liliyayalovchenko.dao.DishDAO.getDishById(int))
+15:55:23.952 [main] INFO  l.web.configuration.AppLogging - Method : getDishById
+15:55:23.952 [main] INFO  l.web.configuration.AppLogging - Arguments : [50]
+15:55:23.953 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+15:55:23.953 [main] ERROR l.web.configuration.AppLogging - Exception thrown in dao implementation Method=execution(Dish liliyayalovchenko.dao.DishDAO.getDishById(int))
+15:55:23.959 [main] ERROR l.w.c.E.GlobalExceptionHandler - Requested URL=http://localhost/admin/dish/50
+15:55:23.959 [main] ERROR l.w.c.E.GlobalExceptionHandler - Exception Raised=liliyayalovchenko.web.exeptions.DishNotFoundException: DishNotFoundException with id=50
+16:32:07.485 [MLog-Init-Reporter] INFO  com.mchange.v2.log.MLog - MLog clients using slf4j logging.
+16:32:07.633 [main] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+16:32:08.141 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.2.1.Final}
+16:32:08.144 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+16:32:08.146 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+16:32:08.208 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+16:32:08.351 [main] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 1, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> z8kfsx9jcrybjr1tlzaw5|7fe7c640, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> z8kfsx9jcrybjr1tlzaw5|7fe7c640, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/RestaurantCRM, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 1, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+16:32:08.926 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+16:32:11.794 [main] INFO  l.web.configuration.AppLogging - ************************Method is starting!************************
+16:32:11.796 [main] INFO  l.web.configuration.AppLogging - Method execution(Dish liliyayalovchenko.dao.DishDAO.getDishById(int))
+16:32:11.797 [main] INFO  l.web.configuration.AppLogging - Method : getDishById
+16:32:11.797 [main] INFO  l.web.configuration.AppLogging - Arguments : [50]
+16:32:11.814 [main] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+16:32:11.970 [main] DEBUG org.hibernate.SQL - select dish0_.id as id1_0_, dish0_.category as category2_0_, dish0_.menu_id as menu_id7_0_, dish0_.name as name3_0_, dish0_.photo as photo4_0_, dish0_.price as price5_0_, dish0_.weight as weight6_0_ from DISH dish0_ where dish0_.id=?
+16:32:12.009 [main] INFO  l.web.configuration.AppLogging - Method execution(Dish liliyayalovchenko.dao.DishDAO.getDishById(int))
+16:32:12.011 [main] INFO  l.web.configuration.AppLogging - Method : getDishById
+16:32:12.011 [main] INFO  l.web.configuration.AppLogging - Arguments : [50]
+16:32:12.013 [main] INFO  l.web.configuration.AppLogging - ************************Method is finishing!************************
+16:32:12.014 [main] ERROR l.web.configuration.AppLogging - Exception thrown in dao implementation Method=execution(Dish liliyayalovchenko.dao.DishDAO.getDishById(int))
+16:32:12.026 [main] ERROR l.w.c.E.GlobalExceptionHandler - Requested URL=http://localhost/admin/dish/50
+16:32:12.026 [main] ERROR l.w.c.E.GlobalExceptionHandler - Exception Raised=java.lang.RuntimeException: Cant get dish by this id! Error

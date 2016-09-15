@@ -5,6 +5,7 @@ import liliyayalovchenko.domain.Dish;
 import liliyayalovchenko.domain.DishCategory;
 import liliyayalovchenko.domain.Ingredient;
 import liliyayalovchenko.domain.Menu;
+import liliyayalovchenko.web.exeptions.DishNotFoundException;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -42,10 +43,10 @@ public class DishDAOImpl implements DishDAO {
         }
     }
 
-
     @Override
     @Transactional(propagation = Propagation.MANDATORY)
-    public void saveDish(int id, String name, String dishCategory, double price, int weight, String photoLink) {
+    public void saveDish(int id, String name, String dishCategory, double price,
+                         int weight, String photoLink) {
         Session session = sessionFactory.getCurrentSession();
         Dish dish = session.load(Dish.class, id);
         createDish(name, dishCategory, price, weight, photoLink, dish);
@@ -54,7 +55,8 @@ public class DishDAOImpl implements DishDAO {
 
     @Override
     @Transactional(propagation = Propagation.MANDATORY)
-    public void saveDish(String name, String dishCategory, double price, int weight, String photoLink, List<Ingredient> ingredients) {
+    public void saveDish(String name, String dishCategory, double price,
+                         int weight, String photoLink, List<Ingredient> ingredients) {
         Session session = sessionFactory.getCurrentSession();
         Dish dish = new Dish();
         dish.setIngredients(ingredients);
@@ -105,7 +107,8 @@ public class DishDAOImpl implements DishDAO {
         }
     }
 
-    private void createDish(String name, String dishCategory, double price, int weight, String photoLink, Dish dish) {
+    private void createDish(String name, String dishCategory, double price,
+                            int weight, String photoLink, Dish dish) {
         setDishCategory(dishCategory, dish);
         dish.setName(name);
         dish.setPrice(price);

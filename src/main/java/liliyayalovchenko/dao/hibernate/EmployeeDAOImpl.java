@@ -3,6 +3,7 @@ package liliyayalovchenko.dao.hibernate;
 import liliyayalovchenko.dao.EmployeeDAO;
 import liliyayalovchenko.domain.Employee;
 import liliyayalovchenko.domain.Position;
+import liliyayalovchenko.web.exeptions.EmployeeNotFoundException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -27,7 +28,9 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
     @Override
     @Transactional(propagation = Propagation.MANDATORY)
-    public void save(int id, String secondName, String firstName, String dateOfEmpl, String phone, String position, int salary, String photoLink) throws ParseException {
+    public void save(int id, String secondName, String firstName, String dateOfEmpl, String phone,
+                     String position, int salary, String photoLink) throws ParseException {
+
         Employee employee = sessionFactory.getCurrentSession().load(Employee.class, id);
         employee.setFirstName(firstName);
         employee.setSecondName(secondName);

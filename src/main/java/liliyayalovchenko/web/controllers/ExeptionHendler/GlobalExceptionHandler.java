@@ -40,7 +40,6 @@ public class GlobalExceptionHandler {
         LOGGER.error("Exception Raised=" + ex);
 
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("exception", ex);
         modelAndView.addObject("url", request.getRequestURL());
 
         modelAndView.setViewName("404");
@@ -53,7 +52,6 @@ public class GlobalExceptionHandler {
         LOGGER.error("Exception Raised=" + ex);
 
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("exception", ex);
         modelAndView.addObject("url", request.getRequestURL());
         modelAndView.setViewName("wrongInput");
         return modelAndView;
@@ -65,7 +63,6 @@ public class GlobalExceptionHandler {
         LOGGER.error("Exception Raised=" + ex);
 
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("exception", ex);
         modelAndView.addObject("url", request.getRequestURL());
 
         modelAndView.setViewName("error");
@@ -97,7 +94,6 @@ public class GlobalExceptionHandler {
         LOGGER.error("Exception Raised=" + ex);
 
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("exception", ex);
         modelAndView.addObject("url", request.getRequestURL());
 
         modelAndView.setViewName("error");

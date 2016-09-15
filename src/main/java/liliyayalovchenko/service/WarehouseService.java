@@ -3,6 +3,7 @@ package liliyayalovchenko.service;
 import liliyayalovchenko.dao.WarehouseDAO;
 import liliyayalovchenko.domain.Ingredient;
 import liliyayalovchenko.domain.Warehouse;
+import liliyayalovchenko.web.exeptions.IngredientNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,7 +25,7 @@ public class WarehouseService {
     }
 
     @Transactional
-    public void remove(String name) {
+    public void remove(String name) throws IngredientNotFoundException {
         warehouseDAO.removeIngredient(name);
     }
 

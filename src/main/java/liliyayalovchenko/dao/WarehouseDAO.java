@@ -3,6 +3,7 @@ package liliyayalovchenko.dao;
 
 import liliyayalovchenko.domain.Ingredient;
 import liliyayalovchenko.domain.Warehouse;
+import liliyayalovchenko.web.exeptions.IngredientNotFoundException;
 
 import java.util.List;
 
@@ -10,7 +11,7 @@ public interface WarehouseDAO {
 
     void addIngredient(Ingredient ingredient, int amount);
 
-    void removeIngredient(String ingredientName);
+    void removeIngredient(String ingredientName) throws IngredientNotFoundException;
 
     List<Warehouse> getByName(String ingredientName);
 

@@ -6,18 +6,11 @@
     <title>Error Page</title>
 </head>
 <body>
-<h2>Application Error, please contact support.</h2>
+<h2>Error, please contact support or try another request</h2>
 
 <h3>Debug Information:</h3>
 
 Requested URL= ${url}<br><br>
-
-Exception= ${exception.message}<br><br>
-
-<strong>Exception Stack Trace</strong><br>
-<c:forEach items="${exception.stackTrace}" var="ste">
-    ${ste}
-</c:forEach>
 
 </body>
 </html>

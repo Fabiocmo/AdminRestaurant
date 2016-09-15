@@ -18,9 +18,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/admin")
@@ -96,7 +96,7 @@ public class MenuAdminController {
     @RequestMapping(value = "/addDishToMenu/{id}", method = RequestMethod.POST)
     public ModelAndView menuSave(ModelMap model,
                                  @PathVariable int id,
-                                 HttpServletRequest request) throws MenuNotFoundException {
+                                 HttpServletRequest request) throws MenuNotFoundException, DishNotFoundException {
         HttpSession session = request.getSession();
         if (verify(session)) {
             List<Dish> dishList = (List<Dish>) session.getAttribute("dishList");
@@ -173,15 +173,18 @@ public class MenuAdminController {
     @RequestMapping(value = "/menu/add", method = RequestMethod.POST)
     public ModelAndView menuAdd(ModelMap model,
                                 @RequestParam String name,
-                                HttpServletRequest request) {
+                                HttpServletRequest request) throws DishNotFoundException {
         HttpSession session = request.getSession();
         if (verify(session)) {
             Menu menu = new Menu();
             menu.setName(name);
             List<String> dishNames = Arrays.asList(request.getParameterValues("dishName"));
-            List<Dish> dishList = null;
+            List<Dish> dishList = new ArrayList<>();
             if (dishNames.size() != 0) {
-                dishList = dishNames.stream().map(dishService::getDishByName).collect(Collectors.toList());
+                for (String dishName : dishNames) {
+                    dishList.add(dishService.getDishByName(dishName));
+                }
+
                 menu.setDishList(dishList);
             }
             menuService.createMenu(menu);

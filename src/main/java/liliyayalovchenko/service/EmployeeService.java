@@ -30,7 +30,8 @@ public class EmployeeService {
     }
 
     @Transactional
-    public void saveEmployee(int id, String secondName, String firstName, String dateOfEmpl, String phone, String position, int salary, String photoLink) throws ParseException {
+    public void saveEmployee(int id, String secondName, String firstName, String dateOfEmpl,
+                             String phone, String position, int salary, String photoLink) throws ParseException {
         employeeDAO.save(id, secondName, firstName, dateOfEmpl, phone, position, salary, photoLink);
     }
 

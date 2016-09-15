@@ -29,12 +29,16 @@ public class DishService {
     }
 
     @Transactional
-    public void saveDish(int id, String name, String dishCategory, double price, int weight, String photoLink) {
+    public void saveDish(int id, String name, String dishCategory, double price,
+                         int weight, String photoLink) {
+
         dishDAO.saveDish(id, name, dishCategory, price, weight, photoLink);
     }
 
     @Transactional
-    public void saveDish(String name, String dishCategory, double price, int weight, String photoLink, List<Ingredient> ingredients) {
+    public void saveDish(String name, String dishCategory, double price,
+                         int weight, String photoLink, List<Ingredient> ingredients) {
+
         dishDAO.saveDish(name, dishCategory, price, weight, photoLink, ingredients);
     }
 

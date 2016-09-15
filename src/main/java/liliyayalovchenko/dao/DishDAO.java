@@ -15,9 +15,11 @@ public interface DishDAO {
 
     Dish getDishById(int dishId);
 
-    void saveDish(int id, String name, String dishCategory, double price, int weight, String photoLink);
+    void saveDish(int id, String name, String dishCategory, double price,
+                  int weight, String photoLink);
 
-    void saveDish(String name, String dishCategory, double price, int weight, String photoLink, List<Ingredient> ingredients);
+    void saveDish(String name, String dishCategory, double price,
+                  int weight, String photoLink, List<Ingredient> ingredients);
 
     void remove(int id);
 

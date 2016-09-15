@@ -2,6 +2,7 @@ package liliyayalovchenko.dao.hibernate;
 
 import liliyayalovchenko.dao.IngredientDAO;
 import liliyayalovchenko.domain.Ingredient;
+import liliyayalovchenko.web.exeptions.IngredientNotFoundException;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
