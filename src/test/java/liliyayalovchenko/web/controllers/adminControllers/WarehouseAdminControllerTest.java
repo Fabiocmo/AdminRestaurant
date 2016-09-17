@@ -6,6 +6,7 @@ import liliyayalovchenko.domain.Ingredient;
 import liliyayalovchenko.domain.Warehouse;
 import liliyayalovchenko.service.WarehouseService;
 import liliyayalovchenko.web.configuration.WebConfig;
+import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -88,7 +89,7 @@ public class WarehouseAdminControllerTest {
                 )))
                 .andExpect(model().attribute("warehouseList", hasItem(
                         allOf(
-                                hasProperty("id", is(warehouse2.getId())),
+                                Matchers.<Object>hasProperty("id", is(warehouse2.getId())),
                                 hasProperty("ingredId", is(ingredient2)),
                                 hasProperty("amount", is(amount2))
                         )
