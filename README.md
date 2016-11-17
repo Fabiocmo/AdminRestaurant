@@ -1,5 +1,5 @@
 # AdminRestaurant
-Restaurant site for this app
+
 
 DESCRIPTION
 --------------
